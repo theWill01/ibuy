@@ -1,0 +1,370 @@
+.category-links {
+  width: 100%;
+  height: 1100px;
+  border: 1px solid black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.category-links figure {
+  margin-bottom: 5px;
+  position: relative;
+  width: 8em;
+  height: 170px;
+  background-color: #eae6e6;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 10px -35px 9px #cecdcd;
+  border: 1px solid black;
+}
+.category-links figure figcaption {
+  position: absolute;
+  bottom: 0;
+  color: snow;
+  font-weight: 450;
+  font-size: 0.7rem;
+}
+.category-links figure img {
+  position: relative;
+  filter: drop-shadow(15px 10px 9px #818080);
+  width: 100px;
+  height: 100px;
+}
+
+.sidebar {
+  height: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+  .category-links {
+    width: 28em;
+    height: 704px;
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0 auto;
+  }
+  .category-links figure {
+    margin-bottom: 5px;
+    position: relative;
+    width: 9em;
+    height: 170px;
+    background-color: #eae6e6;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 10px -35px 9px #cecdcd;
+    border: 1px solid black;
+  }
+  .category-links figure figcaption {
+    position: absolute;
+    bottom: 0;
+    color: snow;
+    font-weight: 450;
+    font-size: 0.7rem;
+  }
+  .category-links figure img {
+    position: relative;
+    filter: drop-shadow(15px 10px 9px #818080);
+    width: 100px;
+    height: 100px;
+  }
+  .sidebar {
+    height: 100%;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .category-links {
+    width: 100%;
+    height: 550px;
+    background-color: #cecdcd;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border: 1px solid black;
+  }
+  .category-links figure {
+    position: relative;
+    width: 130px;
+    height: 170px;
+    background-color: #eae6e6;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 10px -35px 9px #cecdcd, inset -10px 15px 9px #cecdcd;
+  }
+  .category-links figure figcaption {
+    position: absolute;
+    bottom: 12px;
+    color: snow;
+    font-weight: 450;
+    font-size: 0.9rem;
+  }
+  .category-links figure img {
+    position: relative;
+    filter: drop-shadow(15px 10px 9px #818080);
+  }
+  .category-links figure .lg {
+    width: 95px;
+    height: 95px;
+    top: -14px;
+  }
+  .category-links figure .samsung {
+    width: 85px;
+    height: 85px;
+    top: -15px;
+  }
+  .category-links figure .iphone {
+    width: 90px;
+    height: 130px;
+    top: -14px;
+  }
+  .category-links figure .huawei {
+    width: 75px;
+    height: 90px;
+    top: -14px;
+  }
+  .category-links figure .xiaomi {
+    width: 75px;
+    height: 80px;
+  }
+  .category-links figure .one-plus {
+    width: 75px;
+    height: 90px;
+  }
+  .category-links figure .sony {
+    width: 97.5px;
+    height: 95px;
+    top: -15px;
+  }
+  .category-links figure .oppo {
+    width: 95px;
+    height: 95px;
+    top: -18px;
+  }
+  .category-links figure .tecno {
+    width: 90px;
+    height: 85px;
+    top: -18px;
+  }
+  .category-links figure .gionee {
+    width: 85px;
+    height: 85px;
+    top: -18px;
+  }
+  .category-links figure .motorolla {
+    width: 95px;
+    height: 95px;
+    top: -18px;
+  }
+  .category-links figure .infinix {
+    width: 70px;
+    height: 85px;
+    top: -18px;
+  }
+  .sidebar {
+    height: 100%;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .category-links {
+    width: 49.5px;
+    height: 550px;
+    background-color: #cecdcd;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border: 1px solid black;
+    column-gap: 0.5rem;
+  }
+  .category-links figure {
+    position: relative;
+    margin: 0px auto;
+    width: 12em;
+    height: 170px;
+    background-color: #eae6e6;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 10px -35px 9px #cecdcd, inset -10px 15px 9px #cecdcd;
+  }
+  .category-links figure figcaption {
+    position: absolute;
+    bottom: 12px;
+    color: snow;
+    font-weight: 450;
+    font-size: 0.9rem;
+  }
+  .category-links figure img {
+    position: relative;
+    filter: drop-shadow(15px 10px 9px #818080);
+  }
+  .category-links figure .lg {
+    width: 95px;
+    height: 95px;
+    top: -14px;
+  }
+  .category-links figure .samsung {
+    width: 85px;
+    height: 85px;
+    top: -15px;
+  }
+  .category-links figure .iphone {
+    width: 90px;
+    height: 130px;
+    top: -14px;
+  }
+  .category-links figure .huawei {
+    width: 75px;
+    height: 90px;
+    top: -14px;
+  }
+  .category-links figure .xiaomi {
+    width: 75px;
+    height: 80px;
+  }
+  .category-links figure .one-plus {
+    width: 75px;
+    height: 90px;
+  }
+  .category-links figure .sony {
+    width: 97.5px;
+    height: 95px;
+    top: -15px;
+  }
+  .category-links figure .oppo {
+    width: 95px;
+    height: 95px;
+    top: -18px;
+  }
+  .category-links figure .tecno {
+    width: 90px;
+    height: 85px;
+    top: -18px;
+  }
+  .category-links figure .gionee {
+    width: 85px;
+    height: 85px;
+    top: -18px;
+  }
+  .category-links figure .motorolla {
+    width: 95px;
+    height: 95px;
+    top: -18px;
+  }
+  .category-links figure .infinix {
+    width: 70px;
+    height: 85px;
+    top: -18px;
+  }
+  .sidebar {
+    height: 100%;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .category-links {
+    width: 100%;
+    height: 650px;
+    background-color: #cecdcd;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border: 1px solid black;
+  }
+  .category-links figure {
+    position: relative;
+    width: 230px;
+    height: 210px;
+    background-color: #eae6e6;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 10px -35px 9px #cecdcd, inset -10px 15px 9px #cecdcd;
+  }
+  .category-links figure figcaption {
+    position: absolute;
+    bottom: 12px;
+    color: snow;
+    font-weight: 450;
+    font-size: 0.9rem;
+  }
+  .category-links figure img {
+    position: relative;
+    filter: drop-shadow(15px 10px 9px #818080);
+  }
+  .category-links figure .lg {
+    width: 105px;
+    height: 105px;
+    top: -14px;
+  }
+  .category-links figure .samsung {
+    width: 95px;
+    height: 95px;
+    top: -15px;
+  }
+  .category-links figure .iphone {
+    width: 100px;
+    height: 140px;
+    top: -14px;
+  }
+  .category-links figure .huawei {
+    width: 85px;
+    height: 100px;
+    top: -14px;
+  }
+  .category-links figure .xiaomi {
+    width: 85px;
+    height: 90px;
+  }
+  .category-links figure .one-plus {
+    width: 85px;
+    height: 100px;
+  }
+  .category-links figure .sony {
+    width: 107.5px;
+    height: 105px;
+    top: -15px;
+  }
+  .category-links figure .oppo {
+    width: 110px;
+    height: 105px;
+    top: -18px;
+  }
+  .category-links figure .tecno {
+    width: 100px;
+    height: 95px;
+    top: -18px;
+  }
+  .category-links figure .gionee {
+    width: 95px;
+    height: 95px;
+    top: -18px;
+  }
+  .category-links figure .motorolla {
+    width: 105px;
+    height: 105px;
+    top: -18px;
+  }
+  .category-links figure .infinix {
+    width: 80px;
+    height: 95px;
+    top: -18px;
+  }
+  .sidebar {
+    height: 100%;
+  }
+}
+
+/*# sourceMappingURL=ShopByBrands.css.map */

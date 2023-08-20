@@ -1,0 +1,340 @@
+.home {
+  position: relative;
+  height: 4100px;
+  width: 75%;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid black;
+}
+.home .discounts-link {
+  font-size: 1.15rem;
+  font-weight: 430;
+}
+
+.discountItems {
+  border: 1px solid black;
+  width: 100%;
+  height: 290px;
+  overflow: hidden;
+  display: flex;
+}
+.discountItems .items-box {
+  border: 1px solid red;
+  width: 80%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.discountItems .items-box figure {
+  border: 1px solid blue;
+  width: 130px;
+  height: 80%;
+}
+.discountItems .items-box figure img {
+  width: 100%;
+  height: 70%;
+}
+.discountItems .items-box .coupons-btn {
+  border: 1px solid black;
+  width: 50%;
+  height: 30px;
+  border-radius: 5px;
+  text-decoration: none;
+  background-color: yellow;
+  text-align: center;
+}
+
+.banner-2 {
+  border: 1px solid black;
+  width: 100%;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.banner-2 :nth-child(2) {
+  position: absolute;
+  z-index: 1;
+}
+.banner-2 figure {
+  border: 1px solid blue;
+  height: 130%;
+  width: 650px;
+  position: relative;
+  left: -30px;
+}
+.banner-2 figure img {
+  width: 99%;
+  height: 100%;
+}
+.banner-2 .info {
+  width: 300px;
+  height: 200px;
+  position: absolute;
+  right: 234px;
+  color: #e4f2ee;
+}
+.banner-2 .info :first-child {
+  font-size: 2.3rem;
+  position: relative;
+  top: -40px;
+}
+.banner-2 .info :nth-child(3) {
+  font-size: 2.3rem;
+  position: relative;
+  top: -85px;
+}
+.banner-2 .info :nth-child(4) {
+  font-size: 0.9rem;
+  position: relative;
+  top: -120px;
+  font-weight: 400;
+}
+.banner-2 .info :nth-child(5) {
+  font-size: 0.9rem;
+  position: relative;
+  top: -135px;
+  font-weight: 400;
+}
+.banner-2 .info :last-child {
+  font-size: 0.9rem;
+  position: relative;
+  top: -125px;
+  font-weight: 450;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.banner-2 .before {
+  width: 90%;
+  height: 100%;
+  position: relative;
+  border-bottom-left-radius: 15px;
+  background-color: #4467c9;
+  transform: skewX(30deg);
+  left: -150px;
+  box-shadow: inset 5px 0px 5px #709ad2;
+}
+.banner-2 .before::before {
+  content: "";
+  transform: skewX(-40deg);
+  border-bottom-left-radius: 50px;
+  position: absolute;
+  width: 125%;
+  height: 100%;
+  background-color: #709ad2;
+  right: -205px;
+  box-shadow: inset 1px 0px 5px gray;
+}
+
+.gift {
+  border: 1px solid red;
+  height: 525px;
+  width: 100%;
+  padding-left: 0.6rem;
+  display: flex;
+  overflow: hidden;
+}
+.gift .img-box {
+  width: 70%;
+  height: 98%;
+  position: relative;
+  left: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background-color: #7cb4ec;
+  border: 1px solid green;
+}
+.gift .img-box::before {
+  content: "";
+  position: absolute;
+  background-color: #e4f2ee;
+  width: 70%;
+  height: 100%;
+  right: -180px;
+  transform: skewX(50deg);
+}
+.gift figcaption {
+  position: absolute;
+  width: 60%;
+  height: 380px;
+  padding: 1.5px;
+  z-index: 5;
+}
+.gift figcaption h5 {
+  color: #e4f2ee;
+}
+.gift figcaption h1 {
+  font-size: 3.5rem;
+  margin-top: -40px;
+  color: #7cb4ec;
+}
+.gift figcaption h4 {
+  position: relative;
+  top: 210px;
+  color: #e4f2ee;
+}
+.gift .top-img {
+  position: relative;
+  z-index: 4;
+  top: -180px;
+  left: 110px;
+  height: 690px;
+  width: 240px;
+  transform: rotate(90deg);
+}
+.gift .btm-img {
+  position: relative;
+  z-index: 4;
+  top: -290px;
+  right: -32px;
+}
+.gift .gift-right-side {
+  border: 1px solid black;
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.gift .gift-right-side :nth-child(1)::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: #709ad2;
+  transform: skew(45deg);
+}
+.gift .gift-right-side :nth-child(2)::before {
+  content: "";
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #709ad2;
+  transform: skew(45deg);
+  left: 250px;
+}
+.gift .brand-item-box2 {
+  border: 1px solid black;
+  width: 90%;
+  height: 50%;
+  position: relative;
+  overflow: hidden;
+  background-color: #e4f2ee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gift .brand-item-box2 .brand-label {
+  color: #4467c9;
+  position: relative;
+  margin: 40px -40px;
+  border: 1px solid black;
+  font-size: 1.2rem;
+  left: 0;
+}
+.gift .brand-item-box2 .macbook {
+  width: 225px;
+  height: 195px;
+  z-index: 3;
+  position: absolute;
+  transform: rotate(-30deg);
+  right: -30px;
+  top: -20px;
+}
+.gift .brand-item-box2 .watch {
+  width: 225px;
+  height: 270px;
+  z-index: 3;
+  position: absolute;
+  transform: rotate(15deg);
+  right: -30px;
+  top: 5px;
+}
+
+.certified-box {
+  width: 100%;
+  height: 220px;
+  display: flex;
+}
+
+.banner-3 {
+  border: 1px solid black;
+  width: 100%;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+.banner-3 .info-2 {
+  position: absolute;
+  z-index: 5;
+  left: 30px;
+  color: #e4f2ee;
+}
+.banner-3 .info-2 h1 {
+  font-size: 2.3rem;
+}
+.banner-3 .info-2 :nth-child(1) {
+  position: relative;
+  top: -20px;
+}
+.banner-3 .info-2 :nth-child(2) {
+  position: absolute;
+  top: 20px;
+}
+.banner-3 .info-2 :nth-child(3) {
+  margin-bottom: -20px;
+}
+.banner-3 .info-2 :last-child {
+  text-decoration: underline;
+  font-size: 0.9rem;
+}
+.banner-3 .text-2 {
+  width: 75%;
+  height: 100%;
+  position: relative;
+  right: -160px;
+  transform: skewX(30deg);
+  border-top-right-radius: 40px;
+  background-color: rgb(68, 103, 201);
+  box-shadow: inset -5px 0px 9px #e4f2ee;
+}
+.banner-3 .text-2::before {
+  content: "";
+  transform: skewX(-50deg);
+  border-top-right-radius: 50px;
+  position: absolute;
+  width: 125%;
+  height: 100%;
+  background-color: #709ad2;
+  right: 115px;
+  box-shadow: inset -4px 0px 5px gray;
+  z-index: 0;
+}
+.banner-3 .banner-img2 {
+  width: 50%;
+  height: 100%;
+  margin-right: 4px;
+}
+.banner-3 .banner-img2 img {
+  width: 99%;
+  height: 99%;
+}
+
+.promise {
+  width: 100%;
+  height: 300px;
+  border: 1px solid green;
+  display: flex;
+}
+.promise figure {
+  border: 1px solid black;
+}
+
+/*# sourceMappingURL=Home.css.map */

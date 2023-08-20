@@ -1,0 +1,1978 @@
+$primary-color: rgba(148, 196, 236, 1);
+$secondary-color: #e4f2ee;
+
+.home {
+  position: relative;
+  height: 5950px;
+  width: 80%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.coupons-btn {
+  width: 90%;
+  height: 30px;
+  border-radius: 5px;
+  text-decoration: none;
+  background-color: yellow;
+  text-align: center;
+}
+
+.banner-2 {
+  figure {
+    border: 1px solid blue;
+    height: 130%;
+    width: 650px;
+    position: relative;
+    left: -30px;
+    img {
+      width: 99%;
+      height: 100%;
+    }
+  }
+
+  .info {
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    right: 234px;
+    color: $secondary-color;
+    z-index: 1;
+
+    & :nth-child(4) {
+      font-size: 0.9rem;
+      position: relative;
+      top: -40px;
+      font-weight: 400;
+    }
+
+    & :nth-child(5) {
+      font-size: 0.9rem;
+      position: relative;
+      top: -40px;
+      font-weight: 400;
+    }
+
+    & :last-child {
+      font-size: 0.9rem;
+      position: relative;
+      top: -35px;
+      font-weight: 450;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+
+  .before {
+    width: 90%;
+    height: 100%;
+    position: relative;
+    border-bottom-left-radius: 15px;
+    background-color: #4467c9;
+    transform: skewX(30deg);
+    left: -150px;
+    box-shadow: inset 5px 0px 5px $primary-color;
+  }
+  .before::before {
+    content: "";
+    transform: skewX(-40deg);
+    border-bottom-left-radius: 50px;
+    position: absolute;
+    width: 125%;
+    height: 100%;
+    background-color: $primary-color;
+    right: -220px;
+    box-shadow: inset 1px 0px 5px gray;
+  }
+}
+
+.gift {
+  height: 550px;
+  width: 100%;
+  //  padding-left: 0.6rem;
+  display: flex;
+  border: 1px solid black;
+  //justify-content: space-between;
+
+  overflow: hidden;
+  .img-box {
+    width: 100%;
+    height: 60%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+
+    background-color: #7cb4ec;
+  }
+  .img-box::before {
+    content: "";
+    position: absolute;
+    background-color: #e4f2ee;
+    width: 70%;
+    height: 100%;
+    right: -180px;
+    transform: skewX(50deg);
+  }
+
+  span {
+    position: absolute;
+    width: 90%;
+    height: 380px;
+    padding: 1.5px;
+    z-index: 5;
+   
+
+    h5 {
+      color: #e4f2ee;
+    }
+
+    h1 {
+      font-size: 1.4rem;
+      position: absolute;
+      top: 30px;
+      color: #7cb4ec;
+    }
+
+    h4 {
+      position: relative;
+      top: 250px;
+
+      color: rgba(59, 130, 246, 1);
+    }
+  }
+
+  .top-img {
+    position: relative;
+
+    z-index: 4;
+    top: -180px;
+    left: -50px;
+    height: 690px;
+    width: 210px;
+    transform: rotate(90deg);
+  }
+  .btm-img {
+    position: relative;
+
+    z-index: 4;
+    top: -290px;
+  }
+
+  .gift-right-side {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    & :nth-child(1)::before {
+      content: "";
+      position: relative;
+      width: 220%;
+      height: 100%;
+      background-color: $primary-color;
+      transform: skew(45deg);
+      left: 100px;
+    }
+
+    & :nth-child(2)::before {
+      content: "";
+      position: relative;
+      width: 220%;
+      height: 100%;
+      background-color: $primary-color;
+      transform: skew(45deg);
+      right: 40px;
+    }
+  }
+  .brand-item-box2 {
+    width: 49%;
+    height: 90%;
+    position: relative;
+    overflow: hidden;
+    background-color: $secondary-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .brand-label {
+      width: 190px;
+      position: absolute;
+      right: -50px;
+      top: 160px;
+      z-index: 4;
+
+      h4 {
+        color: #4467c9;
+        font-size: 0.7rem;
+      }
+    }
+
+    .macbook {
+      width: calc(350px * 0.5);
+      height: calc(240px * 0.5);
+      z-index: 3;
+      position: absolute;
+      transform: rotate(-30deg);
+      right: -30px;
+      top: 20px;
+    }
+    .watch {
+      width: calc(350px * 0.5);
+      height: calc(390px * 0.5);
+      z-index: 3;
+      position: absolute;
+      transform: rotate(15deg);
+      right: -30px;
+      top: 5px;
+    }
+  }
+}
+
+.certified-box {
+  width: 100%;
+  height: 180px;
+  display: flex;
+  border: 1px solid black;
+}
+
+.banner-3 {
+  width: 100%;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid black;
+
+  .info-2 {
+    width: 140px;
+    height: 100px;
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    left: 5px;
+    color: #e4f2ee;
+    h1 {
+      font-size: 0.9rem;
+    }
+
+    & :nth-child(1) {
+      position: relative;
+      top: 5px;
+    }
+    & :nth-child(2) {
+      position: absolute;
+      top: 21px;
+    }
+
+    & :nth-child(3) {
+      position: relative;
+      top: 20px;
+      font-size: 0.55rem;
+    }
+
+    & :nth-child(4) {
+      position: relative;
+      top: 25px;
+      font-size: 0.55rem;
+    }
+
+    & :last-child {
+      text-decoration: underline;
+      font-size: 0.9rem;
+      cursor: pointer;
+      position: relative;
+      top: 20px;
+    }
+  }
+
+  .text-2 {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    right: -70px;
+    transform: skewX(30deg);
+    border-top-right-radius: 40px;
+    background-color: rgba(68, 103, 201, 1);
+    box-shadow: inset -5px 0px 9px #e4f2ee;
+  }
+  .text-2::before {
+    content: "";
+    transform: skewX(-50deg);
+    border-top-right-radius: 50px;
+    position: absolute;
+    width: 155%;
+    height: 100%;
+    background-color: $primary-color;
+    right: 62px;
+    box-shadow: inset -4px 0px 5px gray;
+    z-index: 0;
+  }
+
+  .banner-img2 {
+    width: 100%;
+    height: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.promise {
+  border: 1px solid black;
+  width: 100%;
+  height: 700px;
+}
+
+.article-head {
+  text-align: center;
+  font-weight: 495;
+  font-size: 1.2rem;
+}
+
+.questions {
+  border: 1px solid black;
+  width: 100%;
+  height: 770px;
+  div {
+    width: 99%;
+    border-bottom: 0.5px solid #4e4e4e;
+    overflow: hidden;
+    margin-bottom: 5px;
+    padding: 0.3rem;
+  }
+}
+.questions > :first-child {
+  width: 99%;
+  height: 135px;
+}
+
+.questions > :nth-child(2) {
+  width: 99%;
+  height: 160px;
+}
+
+.questions > :nth-child(3) {
+  width: 99%;
+  height: 180px;
+}
+
+.questions > :nth-child(4) {
+  width: 99%;
+  height: 197px;
+}
+@media only screen and (min-width: 600px) {
+  .home {
+    position: relative;
+    height: 5330px;
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  .gift {
+    height: 35.5em;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid greenyellow;
+    column-gap: 0.5em;
+    justify-content: space-evenly;
+    overflow: hidden;
+    .img-box {
+      width: 100%;
+      height: 20em;
+      position: relative;
+      margin: 0 auto;
+      overflow: hidden;
+      display: flex;
+      border: 1px solid red;
+      background-color: #7cb4ec;
+    }
+    .img-box::before {
+      content: "";
+      position: absolute;
+      background-color: #e4f2ee;
+      width: 70%;
+      height: 100%;
+      right: -180px;
+      transform: skewX(50deg);
+    }
+
+    span {
+      position: absolute;
+
+      width: 70%;
+      height: 380px;
+      padding: 1.5px;
+      z-index: 5;
+
+      h5 {
+        color: #e4f2ee;
+        position: relative;
+      }
+
+      h1 {
+        font-size: 3rem;
+        border: 1px solid red;
+        margin-top: -10px;
+        color: #7cb4ec;
+      }
+
+      h4 {
+        position: relative;
+        top: 210px;
+
+        color: #e4f2ee;
+      }
+    }
+
+    .top-img {
+      position: relative;
+
+      z-index: 4;
+      top: -180px;
+      left: 110px;
+      height: 690px;
+      width: 240px;
+      transform: rotate(90deg);
+    }
+    .btm-img {
+      position: relative;
+
+      z-index: 4;
+      top: -290px;
+      right: -32px;
+    }
+
+    .gift-right-side {
+      width: 100%;
+      height: 15em;
+      display: flex;
+      border: 1px solid black;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      column-gap: 8px;
+      & :nth-child(1)::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: $primary-color;
+        transform: skew(45deg);
+        left: 290px;
+      }
+
+      & :nth-child(2)::before {
+        content: "";
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background-color: $primary-color;
+        transform: skew(45deg);
+        left: 270px;
+      }
+    }
+    .brand-item-box2 {
+      width: 240px;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      background-color: $secondary-color;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid red;
+      .brand-label {
+        width: 190px;
+        position: absolute;
+        font-size: 1.9rem;
+        right: 50px;
+        top: 205px;
+        // bottom: 20px;
+        z-index: 4;
+
+        h4 {
+          color: rgba(78, 78, 78, 1);
+          font-size: 1rem;
+        }
+      }
+
+      .macbook {
+        width: calc(450px * 0.5);
+        height: calc(390px * 0.5);
+        z-index: 3;
+        position: absolute;
+        transform: rotate(-30deg);
+        right: -30px;
+        top: -20px;
+      }
+      .watch {
+        width: calc(450px * 0.5);
+        height: calc(540px * 0.5);
+        z-index: 3;
+        position: absolute;
+        transform: rotate(15deg);
+        right: -30px;
+        top: 5px;
+      }
+    }
+  }
+
+  .banner-3 {
+    width: 100%;
+    height: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+
+    .info-2 {
+      width: 60%;
+      height: 99%;
+
+      padding-left: 5px;
+      position: absolute;
+      z-index: 5;
+      color: #e4f2ee;
+      border: 1px solid black;
+      h1 {
+        font-size: 1.4rem;
+      }
+
+      & :nth-child(1) {
+        position: relative;
+       
+      }
+      & :nth-child(2) {
+        position: relative;
+       top: -10px;
+      }
+
+      & :nth-child(3) {
+        position: relative;
+        top: -10px;
+      }
+
+        & :nth-child(4) {
+        position: relative;
+        top: -10px;
+      }
+
+      & :last-child {
+        text-decoration: underline;
+        font-size: 0.9rem;
+        cursor: pointer;
+        position: relative;
+        top: 20px;
+      }
+    }
+
+    .text-2 {
+      width: 85%;
+      height: 100%;
+      position: relative;
+      right: -95px;
+      transform: skewX(30deg);
+      border-top-right-radius: 40px;
+      background-color: rgba(68, 103, 201, 1);
+      box-shadow: inset -5px 0px 9px #e4f2ee;
+    }
+    .text-2::before {
+      content: "";
+      transform: skewX(-50deg);
+      border-top-right-radius: 50px;
+      position: absolute;
+      width: 125%;
+      height: 100%;
+      background-color: $primary-color;
+      right: 98px;
+      box-shadow: inset -4px 0px 5px gray;
+      z-index: 0;
+    }
+
+    .banner-img2 {
+      width: 100%;
+      height: 100%;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  .promise {
+  border: 1px solid black;
+  width: 100%;
+  height: 584px;
+  overflow: hidden;
+  column-gap: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+ 
+}
+  .questions {
+width: 100%;
+      height: 37em;
+
+    .que{
+      width: 99%;
+      height: 8em;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .home {
+    position: relative;
+    height: 4110px;
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+    border: 1px solid blue;
+  }
+  .gift {
+    height: 450px;
+    width: 100%;
+    padding-left: 0.6rem;
+    display: flex;
+    border: 1px solid black;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    overflow: hidden;
+    .img-box {
+      width: 65%;
+      height: 99%;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      border: 1px solid black;
+      background-color: #7cb4ec;
+    }
+    .img-box::before {
+      content: "";
+      position: absolute;
+      background-color: #e4f2ee;
+      width: 70%;
+      height: 100%;
+      right: -180px;
+      transform: skewX(50deg);
+    }
+
+    span {
+      position: absolute;
+      width: 60%;
+      height: 380px;
+      padding: 1.5px;
+      z-index: 5;
+
+      h5 {
+        color: #e4f2ee;
+      }
+
+      h1 {
+        font-size: 1.9rem;
+        position: absolute;
+        top: 70px;
+        color: #7cb4ec;
+      }
+
+      .shop-samsung {
+        position: absolute;
+        top: 400px;
+        text-shadow: 5px 5px 7px black;
+        color: #e4f2ee;
+      }
+    }
+
+    .top-img {
+      position: relative;
+
+      z-index: 4;
+      top: -180px;
+      left: -50px;
+      height: 690px;
+      width: 210px;
+      transform: rotate(90deg);
+    }
+    .btm-img {
+      position: relative;
+
+      z-index: 4;
+      top: -290px;
+    }
+
+    .gift-right-side {
+      width: 32%;
+      height: 99%;
+      display: flex;
+
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+
+      & :nth-child(1)::before {
+        content: "";
+        width: 150%;
+        height: 100%;
+        background-color: $primary-color;
+        transform: skew(45deg);
+        position: relative;
+       
+        left: 28px;
+      }
+
+      & :nth-child(2)::before {
+        content: "";
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background-color: $primary-color;
+        transform: skew(45deg);
+        left: 254px;
+      }
+    }
+    .brand-item-box2 {
+      width: 99%;
+      height: 49%;
+      position: relative;
+      overflow: hidden;
+      background-color: $secondary-color;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid black;
+
+      .brand-label {
+        width: 190px;
+        position: absolute;
+
+        right: -6px;
+        top: 180px;
+        z-index: 4;
+
+        h4 {
+          color: #4467c9;
+          font-size: 0.9rem;
+        }
+      }
+
+      .macbook {
+        width: calc(350px * 0.5);
+        height: calc(240px * 0.5);
+        z-index: 3;
+        position: absolute;
+        transform: rotate(-30deg);
+        right: -30px;
+        top: 20px;
+      }
+      .watch {
+        width: calc(350px * 0.5);
+        height: calc(390px * 0.5);
+        z-index: 3;
+        position: absolute;
+        transform: rotate(15deg);
+        right: -30px;
+        top: 5px;
+      }
+    }
+  }
+
+  .banner-2 {
+    figure {
+      border: 1px solid blue;
+      height: 130%;
+      width: 650px;
+      position: relative;
+      left: -30px;
+      img {
+        width: 99%;
+        height: 100%;
+      }
+    }
+
+    .info {
+      width: 300px;
+      height: 200px;
+      position: absolute;
+      right: -22px;
+      color: $secondary-color;
+      z-index: 1;
+
+      & :nth-child(4) {
+        font-size: 0.9rem;
+        position: relative;
+        top: -40px;
+        font-weight: 400;
+      }
+
+      & :nth-child(5) {
+        font-size: 0.9rem;
+        position: relative;
+        top: -40px;
+        font-weight: 400;
+      }
+
+      & :last-child {
+        font-size: 0.9rem;
+        position: relative;
+        top: -35px;
+        font-weight: 450;
+        cursor: pointer;
+        text-decoration: underline;
+      }
+    }
+
+    .before {
+      width: 90%;
+      height: 100%;
+      position: relative;
+      border-bottom-left-radius: 15px;
+      background-color: #4467c9;
+      transform: skewX(30deg);
+      left: -110px;
+      box-shadow: inset 5px 0px 5px $primary-color;
+    }
+    .before::before {
+      content: "";
+      transform: skewX(-40deg);
+      border-bottom-left-radius: 50px;
+      position: absolute;
+      width: 135%;
+      height: 100%;
+      background-color: $primary-color;
+      right: -150px;
+      box-shadow: inset 1px 0px 5px gray;
+    }
+  }
+  .banner-3 {
+    width: 100%;
+    height: 190px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid black;
+
+    .info-2 {
+      height: 90%;
+      position: absolute;
+      z-index: 5;
+      left: 10px;
+      color: #e4f2ee;
+      h1 {
+        font-size: 1.4rem;
+      }
+
+      & :nth-child(1) {
+        position: relative;
+        top: 5px;
+      }
+      & :nth-child(2) {
+        position: absolute;
+        top: 25px;
+      }
+
+      & :nth-child(3) {
+        position: relative;
+        top: 20px;
+        font-size: 0.65rem;
+      }
+
+      & :nth-child(4) {
+        position: relative;
+        top: 15px;
+        font-size: 0.65rem;
+      }
+
+      & :last-child {
+        text-decoration: underline;
+        font-size: 0.9rem;
+        cursor: pointer;
+        position: relative;
+        top: 60px;
+      }
+    }
+
+    .text-2 {
+      width: 85%;
+      height: 100%;
+      position: relative;
+      right: -85px;
+      transform: skewX(30deg);
+      border-top-right-radius: 40px;
+      background-color: rgba(68, 103, 201, 1);
+      box-shadow: inset -5px 0px 9px #e4f2ee;
+    }
+    .text-2::before {
+      content: "";
+      transform: skewX(-50deg);
+      border-top-right-radius: 50px;
+      position: absolute;
+      width: 125%;
+      height: 100%;
+      background-color: $primary-color;
+      right: 94px;
+      box-shadow: inset -4px 0px 5px gray;
+      z-index: 0;
+    }
+
+    .banner-img2 {
+      width: 84%;
+      height: 100%;
+      margin-right: -4px;
+      border: 1px solid black;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  .promise {
+    border: 1px solid black;
+    width: 100%;
+    height: 430px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  .questions {
+    border: 1px solid black;
+    width: 100%;
+    height: 430px;
+    overflow: hidden;
+    div {
+      width: 99%;
+      border-bottom: 0.5px solid #4e4e4e;
+      overflow: hidden;
+      margin-bottom: 1px;
+      padding: 0.3rem;
+    }
+  }
+  .questions > :first-child {
+    width: 99%;
+    height: 85px;
+  }
+
+  .questions > :nth-child(2) {
+    width: 99%;
+    height: 85px;
+  }
+
+  .questions > :nth-child(3) {
+    width: 99%;
+    height: 85px;
+  }
+
+  .questions > :nth-child(4) {
+    width: 99%;
+    height: 100px;
+  }
+}
+
+@media only screen and (min-width: 810px) {
+  .banner-2 {
+    figure {
+      border: 1px solid blue;
+      height: 130%;
+      width: 650px;
+      position: relative;
+      left: -30px;
+      img {
+        width: 99%;
+        height: 100%;
+      }
+    }
+
+    .info {
+      width: 300px;
+      height: 200px;
+      position: absolute;
+      right: -22px;
+      color: $secondary-color;
+      z-index: 1;
+
+      & :nth-child(4) {
+        font-size: 0.9rem;
+        position: relative;
+        top: -40px;
+        font-weight: 400;
+      }
+
+      & :nth-child(5) {
+        font-size: 0.9rem;
+        position: relative;
+        top: -40px;
+        font-weight: 400;
+      }
+
+      & :last-child {
+        font-size: 0.9rem;
+        position: relative;
+        top: -35px;
+        font-weight: 450;
+        cursor: pointer;
+        text-decoration: underline;
+      }
+    }
+
+    .before {
+      width: 90%;
+      height: 100%;
+      position: relative;
+      border-bottom-left-radius: 15px;
+      background-color: #4467c9;
+      transform: skewX(30deg);
+      left: -110px;
+      box-shadow: inset 5px 0px 5px $primary-color;
+    }
+    .before::before {
+      content: "";
+      transform: skewX(-40deg);
+      border-bottom-left-radius: 50px;
+      position: absolute;
+      width: 135%;
+      height: 100%;
+      background-color: $primary-color;
+      right: -160px;
+      box-shadow: inset 1px 0px 5px gray;
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .home {
+    position: relative;
+    height: 3750px;
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  .banner-2 {
+    figure {
+      border: 1px solid blue;
+      height: 130%;
+      width: 650px;
+      position: relative;
+      left: -30px;
+      img {
+        width: 99%;
+        height: 100%;
+      }
+    }
+
+    .info {
+      width: 300px;
+      height: 200px;
+      position: absolute;
+      right: 100px;
+      color: $secondary-color;
+      z-index: 1;
+
+      & :nth-child(4) {
+        font-size: 0.9rem;
+        position: relative;
+        top: -40px;
+        font-weight: 400;
+      }
+
+      & :nth-child(5) {
+        font-size: 0.9rem;
+        position: relative;
+        top: -40px;
+        font-weight: 400;
+      }
+
+      & :last-child {
+        font-size: 0.9rem;
+        position: relative;
+        top: -35px;
+        font-weight: 450;
+        cursor: pointer;
+        text-decoration: underline;
+      }
+    }
+
+    .before {
+      width: 90%;
+      height: 100%;
+      position: relative;
+      border-bottom-left-radius: 15px;
+      background-color: #4467c9;
+      transform: skewX(30deg);
+      left: -110px;
+      box-shadow: inset 5px 0px 5px $primary-color;
+    }
+    .before::before {
+      content: "";
+      transform: skewX(-40deg);
+      border-bottom-left-radius: 50px;
+      position: absolute;
+      width: 120%;
+      height: 100%;
+      background-color: $primary-color;
+      right: -150px;
+      box-shadow: inset 1px 0px 5px gray;
+    }
+  }
+
+  .gift {
+    height: 450px;
+    width: 100%;
+    padding-left: 0.6rem;
+    display: flex;
+    border: 1px solid black;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    overflow: hidden;
+    .img-box {
+      width: 65%;
+      height: 99%;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      border: 1px solid black;
+      background-color: #7cb4ec;
+    }
+    .img-box::before {
+      content: "";
+      position: absolute;
+      background-color: #e4f2ee;
+      width: 70%;
+      height: 100%;
+      right: -180px;
+      transform: skewX(50deg);
+    }
+
+    span {
+      position: absolute;
+      width: 60%;
+      height: 380px;
+      padding: 1.5px;
+      z-index: 5;
+
+      h5 {
+        color: #e4f2ee;
+      }
+
+      h1 {
+        font-size: 2.6rem;
+        position: absolute;
+        top: 76px;
+        color: #7cb4ec;
+      }
+
+      .shop-samsung {
+        position: relative;
+        top: 350px;
+        color: #e4f2ee;
+      }
+    }
+
+    .top-img {
+      position: relative;
+
+      z-index: 4;
+      top: -180px;
+      left: 70px;
+      height: 690px;
+      width: 240px;
+      transform: rotate(90deg);
+    }
+    .btm-img {
+      position: relative;
+
+      z-index: 4;
+      top: -290px;
+    }
+
+    .gift-right-side {
+      width: 32%;
+      height: 99%;
+      display: flex;
+
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+
+      & :nth-child(1)::before {
+        content: "";
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background-color: $primary-color;
+        transform: skew(45deg);
+        left: 25px;
+      }
+
+      & :nth-child(2)::before {
+        content: "";
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background-color: $primary-color;
+        transform: skew(45deg);
+        left: 250px;
+      }
+    }
+    .brand-item-box2 {
+      width: 96%;
+      height: 49%;
+      position: relative;
+      overflow: hidden;
+      background-color: $secondary-color;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid black;
+
+      .brand-label {
+        width: 190px;
+        position: absolute;
+
+        right: 57px;
+        top: 180px;
+        z-index: 4;
+
+        h4 {
+          color: #4467c9;
+          font-size: 0.9rem;
+        }
+      }
+
+      .macbook {
+        width: calc(350px * 0.5);
+        height: calc(240px * 0.5);
+        z-index: 3;
+        position: absolute;
+        transform: rotate(-30deg);
+        right: -30px;
+        top: 20px;
+      }
+      .watch {
+        width: calc(350px * 0.5);
+        height: calc(390px * 0.5);
+        z-index: 3;
+        position: absolute;
+        transform: rotate(15deg);
+        right: -30px;
+        top: 5px;
+      }
+    }
+  }
+
+  .banner-3 {
+    width: 100%;
+    height: 190px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid black;
+
+    .info-2 {
+      position: absolute;
+      z-index: 5;
+      left: 10px;
+      color: #e4f2ee;
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      & :nth-child(1) {
+        position: relative;
+        top: 1px;
+      }
+      & :nth-child(2) {
+        position: absolute;
+        top: 21px;
+      }
+
+      & :nth-child(3) {
+        position: relative;
+        top: 20px;
+        font-size: 0.75rem;
+      }
+
+      & :nth-child(4) {
+        position: relative;
+        top: 25px;
+        font-size: 0.75rem;
+      }
+
+      & :last-child {
+        text-decoration: underline;
+        font-size: 0.9rem;
+        cursor: pointer;
+        position: relative;
+        top: 20px;
+      }
+    }
+
+    .text-2 {
+      width: 85%;
+      height: 100%;
+      position: relative;
+      right: -84px;
+      transform: skewX(30deg);
+      border-top-right-radius: 40px;
+      background-color: rgba(68, 103, 201, 1);
+      box-shadow: inset -5px 0px 9px #e4f2ee;
+    }
+    .text-2::before {
+      content: "";
+      transform: skewX(-50deg);
+      border-top-right-radius: 50px;
+      position: absolute;
+      width: 120%;
+      height: 100%;
+      background-color: $primary-color;
+      right: 99px;
+      box-shadow: inset -4px 0px 5px gray;
+      z-index: 0;
+    }
+
+    .banner-img2 {
+      width: 80%;
+      height: 100%;
+      margin-right: -10px;
+      border: 1px solid black;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  .promise {
+    border: 1px solid black;
+    width: 100%;
+    height: 220px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  .questions {
+    border: 1px solid black;
+    width: 100%;
+    height: 550px;
+    overflow: hidden;
+    div {
+      width: 99%;
+      border-bottom: 0.5px solid #4e4e4e;
+      overflow: hidden;
+      margin-bottom: 5px;
+      padding: 0.3rem;
+    }
+  }
+  .questions > :first-child {
+    width: 99%;
+    height: 115px;
+  }
+
+  .questions > :nth-child(2) {
+    width: 99%;
+    height: 110px;
+  }
+
+  .questions > :nth-child(3) {
+    width: 99%;
+    height: 120px;
+  }
+
+  .questions > :nth-child(4) {
+    width: 99%;
+    height: 120px;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .home {
+    position: relative;
+    height: 3890px;
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  .banner-2 {
+    margin-top: 25px;
+    figure {
+      border: 1px solid blue;
+      height: 130%;
+      width: 650px;
+      position: relative;
+      left: -30px;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .info {
+      width: 300px;
+      height: 200px;
+      position: absolute;
+      right: 190px;
+      color: $secondary-color;
+      z-index: 1;
+
+      & :nth-child(4) {
+        font-size: 0.9rem;
+        position: relative;
+        top: -40px;
+        font-weight: 400;
+      }
+
+      & :nth-child(5) {
+        font-size: 0.9rem;
+        position: relative;
+        top: -40px;
+        font-weight: 400;
+      }
+
+      & :last-child {
+        font-size: 0.9rem;
+        position: relative;
+        top: -35px;
+        font-weight: 450;
+        cursor: pointer;
+        text-decoration: underline;
+      }
+    }
+
+    .before {
+      width: 90%;
+      height: 100%;
+      position: relative;
+      border-bottom-left-radius: 15px;
+      background-color: #4467c9;
+      transform: skewX(30deg);
+      left: -130px;
+      box-shadow: inset 5px 0px 5px $primary-color;
+    }
+    .before::before {
+      content: "";
+      transform: skewX(-40deg);
+      border-bottom-left-radius: 50px;
+      position: absolute;
+      width: 120%;
+      height: 100%;
+      background-color: $primary-color;
+      right: -200px;
+      box-shadow: inset 1px 0px 5px gray;
+    }
+  }
+
+  .gift {
+    height: 450px;
+    width: 100%;
+    padding-left: 0.6rem;
+    display: flex;
+    border: 1px solid black;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    overflow: hidden;
+    .img-box {
+      width: 65%;
+      height: 99%;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      border: 1px solid black;
+      background-color: #7cb4ec;
+    }
+    .img-box::before {
+      content: "";
+      position: absolute;
+      background-color: #e4f2ee;
+      width: 70%;
+      height: 100%;
+      right: -180px;
+      transform: skewX(50deg);
+    }
+
+    span {
+      position: absolute;
+      width: 60%;
+      height: 380px;
+      padding: 1.5px;
+      z-index: 5;
+
+      h5 {
+        color: #e4f2ee;
+      }
+
+      h1 {
+        font-size: 2.3rem;
+        position: absolute;
+        top: 60px;
+        color: #7cb4ec;
+      }
+
+      h4 {
+        position: relative;
+        top: 200px;
+
+        color: #e4f2ee;
+      }
+    }
+
+    .top-img {
+      position: relative;
+
+      z-index: 4;
+      top: -180px;
+      left: 70px;
+      height: 690px;
+      width: 240px;
+      transform: rotate(90deg);
+    }
+    .btm-img {
+      position: relative;
+
+      z-index: 4;
+      top: -290px;
+    }
+
+    .gift-right-side {
+      width: 32%;
+      height: 99%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+
+      & :nth-child(1)::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: relative;
+        background-color: $primary-color;
+        transform: skew(45deg);
+        left: 25px;
+      }
+
+      & :nth-child(2)::before {
+        content: "";
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background-color: $primary-color;
+        transform: skew(45deg);
+        left: 250px;
+      }
+    }
+    .brand-item-box2 {
+      width: 96%;
+      height: 49%;
+      position: relative;
+      overflow: hidden;
+      background-color: $secondary-color;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid black;
+
+      .brand-label {
+        width: 190px;
+        position: absolute;
+      border: 1px solid red;
+        right: 120px;
+        top: 170px;
+        z-index: 4;
+
+        h4 {
+          color: #4467c9;
+          font-size: 0.9rem;
+        }
+      }
+
+      .macbook {
+        width: calc(390px * 0.5);
+        height: calc(290px * 0.5);
+        z-index: 3;
+        position: absolute;
+        transform: rotate(-30deg);
+        right: -30px;
+        top: 20px;
+      }
+      .watch {
+        width: calc(390px * 0.5);
+        height: calc(390px * 0.5);
+        z-index: 3;
+        position: absolute;
+        transform: rotate(15deg);
+        right: -30px;
+        top: 5px;
+      }
+    }
+  }
+
+  .banner-3 {
+    width: 100%;
+    height: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid black;
+
+    .info-2 {
+      width: 300px;
+      height: 200px;
+      position: absolute;
+      z-index: 5;
+      left: 10px;
+      color: #e4f2ee;
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      & :nth-child(1) {
+        position: relative;
+        top: 1px;
+      }
+      & :nth-child(2) {
+        position: absolute;
+        top: 24px;
+      }
+
+      & :nth-child(3) {
+        position: relative;
+        top: 20px;
+        font-size: 0.85rem;
+      }
+
+      & :nth-child(4) {
+        position: relative;
+        top: 12px;
+        font-size: 0.85rem;
+      }
+
+      & :last-child {
+        text-decoration: underline;
+        font-size: 0.9rem;
+        cursor: pointer;
+        position: relative;
+        top: 60px;
+      }
+    }
+
+    .text-2 {
+      width: 85%;
+      height: 100%;
+      position: relative;
+      right: -125px;
+      transform: skewX(30deg);
+      border-top-right-radius: 40px;
+      background-color: rgba(68, 103, 201, 1);
+      box-shadow: inset -5px 0px 9px #e4f2ee;
+    }
+    .text-2::before {
+      content: "";
+      transform: skewX(-50deg);
+      border-top-right-radius: 50px;
+      position: absolute;
+      width: 150%;
+      height: 100%;
+      background-color: $primary-color;
+      right: 124px;
+      box-shadow: inset -4px 0px 5px gray;
+      z-index: 0;
+    }
+
+    .banner-img2 {
+      width: 80%;
+      height: 100%;
+      margin-right: -10px;
+      border: 1px solid black;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  .promise {
+    border: 1px solid black;
+    width: 100%;
+    height: 290px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  .questions {
+    border: 1px solid black;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    div {
+      width: 99%;
+      border-bottom: 0.5px solid #4e4e4e;
+      overflow: hidden;
+      margin-bottom: 5px;
+      padding: 0.3rem;
+    }
+  }
+  .questions > :first-child {
+    width: 99%;
+    height: 75px;
+  }
+
+  .questions > :nth-child(2) {
+    width: 99%;
+    height: 80px;
+  }
+
+  .questions > :nth-child(3) {
+    width: 99%;
+    height: 80px;
+  }
+
+  .questions > :nth-child(4) {
+    width: 99%;
+    height: 80px;
+  }
+}
+
+@media only screen and (min-width: 1348px) {
+  .home {
+    position: relative;
+    height: 3600px;
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  .banner-2 {
+    figure {
+      border: 1px solid blue;
+      height: 130%;
+      width: 650px;
+      position: relative;
+      left: -30px;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .info {
+      width: 300px;
+      height: 200px;
+      position: absolute;
+      right: 190px;
+      color: $secondary-color;
+      z-index: 1;
+
+      & :nth-child(4) {
+        font-size: 0.9rem;
+        position: relative;
+        top: -40px;
+        font-weight: 400;
+      }
+
+      & :nth-child(5) {
+        font-size: 0.9rem;
+        position: relative;
+        top: -40px;
+        font-weight: 400;
+      }
+
+      & :last-child {
+        font-size: 0.9rem;
+        position: relative;
+        top: -35px;
+        font-weight: 450;
+        cursor: pointer;
+        text-decoration: underline;
+      }
+    }
+
+    .before {
+      width: 90%;
+      height: 100%;
+      position: relative;
+      border-bottom-left-radius: 15px;
+      background-color: #4467c9;
+      transform: skewX(30deg);
+      left: -130px;
+      box-shadow: inset 5px 0px 5px $primary-color;
+    }
+    .before::before {
+      content: "";
+      transform: skewX(-40deg);
+      border-bottom-left-radius: 50px;
+      position: absolute;
+      width: 120%;
+      height: 100%;
+      background-color: $primary-color;
+      right: -205px;
+      box-shadow: inset 1px 0px 5px gray;
+    }
+  }
+
+  .gift {
+    height: 450px;
+    width: 100%;
+    padding-left: 0.6rem;
+    display: flex;
+    border: 1px solid black;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    overflow: hidden;
+    .img-box {
+      width: 65%;
+      height: 99%;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      border: 1px solid black;
+      background-color: #7cb4ec;
+    }
+    .img-box::before {
+      content: "";
+      position: absolute;
+      background-color: #e4f2ee;
+      width: 70%;
+      height: 100%;
+      right: -180px;
+      transform: skewX(50deg);
+    }
+
+    span {
+      position: absolute;
+      width: 60%;
+      height: 380px;
+      padding: 1.5px;
+      z-index: 5;
+
+      h5 {
+        color: #e4f2ee;
+      }
+
+      h1 {
+        font-size: 2.3rem;
+        position: absolute;
+        top: 60px;
+        color: #7cb4ec;
+      }
+
+      h4 {
+        position: relative;
+        top: 200px;
+
+        color: #e4f2ee;
+      }
+    }
+
+    .top-img {
+      position: relative;
+
+      z-index: 4;
+      top: -180px;
+      left: 70px;
+      height: 690px;
+      width: 240px;
+      transform: rotate(90deg);
+    }
+    .btm-img {
+      position: relative;
+
+      z-index: 4;
+      top: -290px;
+    }
+
+    .gift-right-side {
+      width: 32%;
+      height: 99%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+
+      & :nth-child(1)::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: relative;
+        background-color: $primary-color;
+        transform: skew(45deg);
+        left: 18px;
+      }
+
+      & :nth-child(2)::before {
+        content: "";
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background-color: $primary-color;
+        transform: skew(45deg);
+        left: 245px;
+      }
+    }
+    .brand-item-box2 {
+      width: 96%;
+      height: 49%;
+      position: relative;
+      overflow: hidden;
+      background-color: $secondary-color;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid black;
+
+      .brand-label {
+        width: 190px;
+        position: absolute;
+
+        right: 120px;
+        top: -10px;
+        z-index: 4;
+
+        h4 {
+          color: #4467c9;
+          font-size: 0.9rem;
+        }
+      }
+
+      .macbook {
+        width: calc(390px * 0.5);
+        height: calc(290px * 0.5);
+        z-index: 3;
+        position: absolute;
+        transform: rotate(-30deg);
+        right: -30px;
+        top: 20px;
+      }
+      .watch {
+        width: calc(390px * 0.5);
+        height: calc(390px * 0.5);
+        z-index: 3;
+        position: absolute;
+        transform: rotate(15deg);
+        right: -30px;
+        top: 5px;
+      }
+    }
+  }
+}

@@ -1,0 +1,510 @@
+.certified {
+  position: relative;
+  width: 100%;
+  height: 99%;
+  background-color: #709ad2;
+  display: flex;
+  overflow: hidden;
+  border: 1px solid black;
+  span {
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    color: #e4f2ee;
+    padding: 0.5rem;
+    color: rgba(0, 7, 55, 1);
+    border: 1px solid black;
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    p {
+      font-size: 1rem;
+      text-shadow: 1px 1px 9px black;
+    }
+    h5 {
+      position: relative;
+      margin-top: 15px;
+      font-size: 0.95rem;
+      color: red;
+    }
+    :nth-child(3) {
+      position: relative;
+      top: -8px;
+    }
+    :last-child {
+      position: relative;
+      top: 9px;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+
+  .render {
+    display: flex;
+
+    figure {
+      width: 80px;
+      height: 160px;
+      z-index: 3;
+      overflow: hidden;
+      position: absolute;
+
+      img {
+        width: 99%;
+        height: 99%;
+      }
+    }
+
+    .img1 {
+      transform: rotate(90deg);
+      top: 108px;
+      right: 310px;
+    }
+
+    .img2 {
+      right: -55px;
+      top: 66px;
+    }
+
+    .img3 {
+      right: 5px;
+      top: -58px;
+      transform: rotate(90deg);
+    }
+    .img4 {
+      width: 80px;
+      top: -8px;
+      right: 265px;
+    }
+    .img5 {
+      width: 115px;
+
+      right: 140px;
+      top: 80px;
+    }
+
+    .img6 {
+      right: 40px;
+      top: 80px;
+    }
+
+    .img7 {
+      right: 350px;
+      top: -6px;
+      position: absolute;
+    }
+    .img8 {
+      // width: 115px;
+
+      right: 140px;
+      top: -90px;
+    }
+  }
+}
+
+.certified::before {
+  content: "";
+  position: absolute;
+  background: #e4f2ee;
+  width: 300px;
+  height: 100%;
+  right: 0;
+  transform: skew(-40deg);
+}
+
+@media only screen and (min-width: 600px) {
+  .certified {
+    position: relative;
+
+    width: 100%;
+    height: 90%;
+    background-color: #709ad2;
+    display: flex;
+    overflow: hidden;
+
+    span {
+      z-index: 4;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      color: #e4f2ee;
+      padding: 0.5rem;
+      p {
+        font-size: 0.9rem;
+      }
+      :nth-child(2) {
+        position: relative;
+        // top: 5px;
+        font-size: 1.4rem;
+        color: #e4f2ee;
+      }
+      :nth-child(3) {
+        position: relative;
+        top: -5px;
+        font-size: 1.3rem;
+        color: #e4f2ee;
+      }
+      :last-child {
+        position: relative;
+        top: 40px;
+        cursor: pointer;
+        text-decoration: underline;
+      }
+    }
+
+    .render {
+      display: flex;
+
+      figure {
+        width: 80px;
+        height: 160px;
+        z-index: 3;
+        overflow: hidden;
+        position: absolute;
+        border: 1px solid black;
+
+        img {
+          width: 99%;
+          height: 99%;
+        }
+      }
+
+      .img1 {
+        transform: rotate(90deg);
+        top: 108px;
+        right: 310px;
+      }
+
+      .img2 {
+        right: -55px;
+        top: 66px;
+      }
+
+      .img3 {
+        right: 5px;
+        top: -58px;
+        transform: rotate(90deg);
+      }
+      .img4 {
+        width: 80px;
+        top: -8px;
+        right: 265px;
+      }
+      .img5 {
+        width: 115px;
+
+        right: 140px;
+        top: 80px;
+      }
+
+      .img6 {
+        right: 40px;
+        top: 80px;
+      }
+
+      .img7 {
+        right: 350px;
+        top: -6px;
+        position: absolute;
+      }
+      .img8 {
+        // width: 115px;
+
+        right: 140px;
+        top: -90px;
+      }
+    }
+  }
+
+  .certified::before {
+    content: "";
+    position: absolute;
+    background: #e4f2ee;
+    width: 300px;
+    height: 100%;
+    right: 0;
+    transform: skew(-40deg);
+  }
+
+  .render {
+    display: flex;
+
+    figure {
+      width: 80px;
+      height: 160px;
+      z-index: 3;
+      overflow: hidden;
+      position: absolute;
+
+      img {
+        width: 99%;
+        height: 99%;
+      }
+    }
+
+    .img1 {
+      transform: rotate(90deg);
+      top: 108px;
+      right: 310px;
+    }
+
+    .img2 {
+      right: -55px;
+      top: 66px;
+    }
+
+    .img3 {
+      right: 5px;
+      top: -58px;
+      transform: rotate(90deg);
+    }
+    .img4 {
+      width: 80px;
+      top: -8px;
+      right: 265px;
+    }
+    .img5 {
+      width: 115px;
+
+      right: 140px;
+      top: 80px;
+    }
+
+    .img6 {
+      right: 40px;
+      top: 80px;
+    }
+
+    .img7 {
+      right: 350px;
+      top: -6px;
+      position: absolute;
+    }
+    .img8 {
+      // width: 115px;
+
+      right: 140px;
+      top: -90px;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .certified {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #709ad2;
+    display: flex;
+    overflow: hidden;
+    border: 1px solid black;
+    span {
+      p {
+        font-size: 1.1rem;
+        text-shadow: 1px 1px 9px black;
+      }
+      h5 {
+        position: relative;
+        margin-top: 15px;
+        font-size: 0.95rem;
+        color: red;
+      }
+      :nth-child(3) {
+        position: relative;
+        top: -8px;
+      }
+      :last-child {
+        position: relative;
+        top: 19px;
+        cursor: pointer;
+        text-decoration: underline;
+      }
+    }
+
+    .render {
+      display: flex;
+
+      figure {
+        width: 80px;
+        height: 160px;
+        z-index: 3;
+        overflow: hidden;
+        position: absolute;
+
+        img {
+          width: 99%;
+          height: 99%;
+        }
+      }
+
+      .img1 {
+        transform: rotate(90deg);
+        top: 108px;
+        right: 310px;
+      }
+
+      .img2 {
+        right: -55px;
+        top: 66px;
+      }
+
+      .img3 {
+        right: 5px;
+        top: -58px;
+        transform: rotate(90deg);
+      }
+      .img4 {
+        width: 80px;
+        top: -8px;
+        right: 265px;
+      }
+      .img5 {
+        width: 115px;
+
+        right: 140px;
+        top: 80px;
+      }
+
+      .img6 {
+        right: 40px;
+        top: 80px;
+      }
+
+      .img7 {
+        right: 350px;
+        top: -6px;
+        position: absolute;
+      }
+      .img8 {
+        // width: 115px;
+
+        right: 140px;
+        top: -90px;
+      }
+    }
+  }
+
+  .certified::before {
+    content: "";
+    position: absolute;
+    background: #e4f2ee;
+    width: 300px;
+    height: 100%;
+    right: 0;
+    transform: skew(-40deg);
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .certified {
+    position: relative;
+
+    width: 100%;
+    height: 90%;
+    background-color: #709ad2;
+    display: flex;
+    overflow: hidden;
+    border: 1px solid black;
+    span {
+      z-index: 4;
+      width: 100%;
+      height: 99%;
+      position: absolute;
+      color: #e4f2ee;
+      padding: 0.5rem;
+
+      p {
+        font-size: 0.9rem;
+      }
+      h5 {
+        position: relative;
+        margin-top: 15px;
+        font-size: 0.95rem;
+        color: red;
+      }
+      :nth-child(3) {
+        position: relative;
+        top: -10px;
+      }
+      :last-child {
+        position: relative;
+        top: 19px;
+        cursor: pointer;
+        text-decoration: underline;
+      }
+    }
+
+    .render {
+      display: flex;
+
+      figure {
+        width: 80px;
+        height: 160px;
+        z-index: 3;
+        overflow: hidden;
+        position: absolute;
+
+        img {
+          width: 99%;
+          height: 99%;
+        }
+      }
+
+      .img1 {
+        transform: rotate(90deg);
+        top: 108px;
+        right: 310px;
+      }
+
+      .img2 {
+        right: -55px;
+        top: 66px;
+      }
+
+      .img3 {
+        right: 5px;
+        top: -58px;
+        transform: rotate(90deg);
+      }
+      .img4 {
+        width: 80px;
+        top: -8px;
+        right: 265px;
+      }
+      .img5 {
+        width: 115px;
+
+        right: 140px;
+        top: 80px;
+      }
+
+      .img6 {
+        right: 40px;
+        top: 80px;
+      }
+
+      .img7 {
+        right: 350px;
+        top: -6px;
+        position: absolute;
+      }
+      .img8 {
+        // width: 115px;
+
+        right: 140px;
+        top: -90px;
+      }
+    }
+  }
+
+  .certified::before {
+    content: "";
+    position: absolute;
+    background: #e4f2ee;
+    width: 300px;
+    height: 100%;
+    right: 0;
+    transform: skew(-40deg);
+  }
+}
