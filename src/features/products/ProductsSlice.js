@@ -127,7 +127,13 @@ const ProductsSlice = createSlice({
       localStorage.setItem("updated post", JSON.stringify(newPost));
     },
     updateProduct(state, action) {
-      state.posts = action.payload;
+      let newPost = [...state.posts];
+      const data = action.payload[0];
+      const currentData = JSON.parse(data.images);
+      let test = { ...data, images: currentData };
+      console.log(test);
+
+      state.posts = data;
     },
   },
   //ASYNC CALLS REDUCERS

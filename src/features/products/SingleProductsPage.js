@@ -20,19 +20,9 @@ export default function SingleProductsPage() {
   const product = useSelector(singlePost);
   const thumbNails = JSON.parse(loaderData[0].images);
   const [dp, setDp] = useState(thumbNails[0].image);
-  console.log(product[0]);
+  //console.log(product);
   const status = useSelector(productsStatus);
 
-  const convertJsonToArray = useCallback(
-    (data) => {
-      let newData;
-      let newArray = [...data];
-      const currentData = data[0].images;
-      newData = { ...data[0], images: JSON.parse(currentData) };
-      return dispatch(updateProduct(newData));
-    },
-    [dispatch]
-  );
 
   const itemImages = thumbNails.map((item, idx) => {
     return (
@@ -54,9 +44,9 @@ export default function SingleProductsPage() {
 
   //____________________________USE EFFECT_______________________________
   useEffect(() => {
-   
+    dispatch(updateProduct(loaderData));
     localStorage.setItem("updated post", JSON.stringify(product));
-  }, [status, product, loaderData]);
+  }, [status, product, dispatch, loaderData]);
 
   const color = (product) => (
     <div className="flex border border-black align-[center] relative">

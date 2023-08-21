@@ -20,7 +20,8 @@ import Home from "./routes/home/Home";
 import Search from "./routes/Search";
 import UpdatePost from "./features/products/UpdatePost";
 import { getAllPosts } from "./features/products/ProductsList";
-
+import { HashRouter } from "react-router-dom";
+import All from "./pages/All";
 const LazyProductsList = React.lazy(() =>
   import("./features/products/ProductsList")
 );
@@ -54,6 +55,7 @@ const router = createBrowserRouter(
         <Route path="/price/:minPrice/:maxPrice" element={<LazyPrice />} />
         <Route path="/software/:software" element={<LazySoftware />} />
         <Route path="/year/:year" element={<LazyYear />} />
+      
 
         <Route path="/upload" element={<LazyUploadService />} />
         <Route path="paginate" element={<Paginate />} />
