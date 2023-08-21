@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./App";
 import {
   createBrowserRouter,
+  createHashRouter,
   createRoutesFromElements,
   Route,
   RouterProvider,
@@ -42,27 +43,23 @@ const fb = () => {
   );
 };
 
-const router = createBrowserRouter(
+const router = createHashRouter(
   createRoutesFromElements(
     <>
       <Route path="/" element={<App />} errorElement={<ErrorPage />}>
         <Route index element={<Home />} />
         <Route path="/update/:postId/:postTitle" element={<UpdatePost />} />
         <Route path="/search/:search" element={<Search />} />
-
         <Route path="/products/:brand" element={<LazyBrandList />} />
-
         <Route path="/price/:minPrice/:maxPrice" element={<LazyPrice />} />
         <Route path="/software/:software" element={<LazySoftware />} />
         <Route path="/year/:year" element={<LazyYear />} />
-      
-
         <Route path="/upload" element={<LazyUploadService />} />
         <Route path="paginate" element={<Paginate />} />
         <Route path="*" element={<ErrorPage />} />
+      
       </Route>
-
-      <Route
+        <Route
         path="/products/all"
         element={
           <Suspense fallback={fb}>
@@ -73,7 +70,6 @@ const router = createBrowserRouter(
           return getAllPosts();
         }}
       />
-
       <Route
         path="/products/:brand/:title/:id"
         element={<SingleProductsPage />}

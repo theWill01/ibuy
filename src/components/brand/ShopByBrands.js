@@ -32,7 +32,7 @@ export default function ShopByBrands() {
           <strong>Shop by Brands</strong>{" "}
         </h1>{" "}
         <a
-          href={"products/all"}
+          href={"/products/all"}
           className="text-[0.95rem]"
         >
           <strong>See All Brands</strong>
