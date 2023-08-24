@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/ibuy/static/css/main.197d5285.css",
-    "main.js": "/ibuy/static/js/main.ade4dbfa.js",
-    "static/js/614.3bd7a1e1.chunk.js": "/ibuy/static/js/614.3bd7a1e1.chunk.js",
-    "static/js/575.f0c8195c.chunk.js": "/ibuy/static/js/575.f0c8195c.chunk.js",
-    "static/js/71.5afd9d76.chunk.js": "/ibuy/static/js/71.5afd9d76.chunk.js",
-    "static/js/901.145ba179.chunk.js": "/ibuy/static/js/901.145ba179.chunk.js",
+    "main.css": "/ibuy/static/css/main.cac73e83.css",
+    "main.js": "/ibuy/static/js/main.89445f0b.js",
+    "static/js/614.8215b735.chunk.js": "/ibuy/static/js/614.8215b735.chunk.js",
+    "static/js/575.d1c55fff.chunk.js": "/ibuy/static/js/575.d1c55fff.chunk.js",
+    "static/js/71.194885ae.chunk.js": "/ibuy/static/js/71.194885ae.chunk.js",
+    "static/js/901.c6df1391.chunk.js": "/ibuy/static/js/901.c6df1391.chunk.js",
     "static/css/984.bd062f2c.chunk.css": "/ibuy/static/css/984.bd062f2c.chunk.css",
-    "static/js/984.f6842c6e.chunk.js": "/ibuy/static/js/984.f6842c6e.chunk.js",
+    "static/js/984.0cd60d4a.chunk.js": "/ibuy/static/js/984.0cd60d4a.chunk.js",
     "static/js/787.8c15bc39.chunk.js": "/ibuy/static/js/787.8c15bc39.chunk.js",
     "static/media/dualshock2.png": "/ibuy/static/media/dualshock2.9668b8fa5efc3b7daa81.png",
     "static/media/camera2.png": "/ibuy/static/media/camera2.ab7373a043239f5f90ae.png",
@@ -48,18 +48,18 @@
     "static/media/image2.png": "/ibuy/static/media/image2.b4274f6f85d7bd4165aa.png",
     "static/media/search.svg": "/ibuy/static/media/search.725a6c44289cb936a7c4bee54260274f.svg",
     "index.html": "/ibuy/index.html",
-    "main.197d5285.css.map": "/ibuy/static/css/main.197d5285.css.map",
-    "main.ade4dbfa.js.map": "/ibuy/static/js/main.ade4dbfa.js.map",
-    "614.3bd7a1e1.chunk.js.map": "/ibuy/static/js/614.3bd7a1e1.chunk.js.map",
-    "575.f0c8195c.chunk.js.map": "/ibuy/static/js/575.f0c8195c.chunk.js.map",
-    "71.5afd9d76.chunk.js.map": "/ibuy/static/js/71.5afd9d76.chunk.js.map",
-    "901.145ba179.chunk.js.map": "/ibuy/static/js/901.145ba179.chunk.js.map",
+    "main.cac73e83.css.map": "/ibuy/static/css/main.cac73e83.css.map",
+    "main.89445f0b.js.map": "/ibuy/static/js/main.89445f0b.js.map",
+    "614.8215b735.chunk.js.map": "/ibuy/static/js/614.8215b735.chunk.js.map",
+    "575.d1c55fff.chunk.js.map": "/ibuy/static/js/575.d1c55fff.chunk.js.map",
+    "71.194885ae.chunk.js.map": "/ibuy/static/js/71.194885ae.chunk.js.map",
+    "901.c6df1391.chunk.js.map": "/ibuy/static/js/901.c6df1391.chunk.js.map",
     "984.bd062f2c.chunk.css.map": "/ibuy/static/css/984.bd062f2c.chunk.css.map",
-    "984.f6842c6e.chunk.js.map": "/ibuy/static/js/984.f6842c6e.chunk.js.map",
+    "984.0cd60d4a.chunk.js.map": "/ibuy/static/js/984.0cd60d4a.chunk.js.map",
     "787.8c15bc39.chunk.js.map": "/ibuy/static/js/787.8c15bc39.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.197d5285.css",
-    "static/js/main.ade4dbfa.js"
+    "static/css/main.cac73e83.css",
+    "static/js/main.89445f0b.js"
   ]
 }
