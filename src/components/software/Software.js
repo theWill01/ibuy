@@ -3,10 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import ReactPaginate from "react-paginate";
 import {
-  allProducts,
+  allPosts,
   productsStatus,
   softwareFilter,
-} from "../../features/products/ProductsSlice";
+} from "../../features/posts/PostsSlice";
 import SideBar from "../sidebar/Sidebar";
 import PaginationItems from "../pagination/PaginationItems";
 import "../../styles/Pagination.scss";
@@ -14,7 +14,7 @@ export default function Software() {
   const params = useParams();
   const dispatch = useDispatch();
   const software = params.software;
-  const products = useSelector(allProducts);
+  const products = useSelector(allPosts);
   const status = useSelector(productsStatus);
 
   const itemsPerPage = 8;
@@ -36,7 +36,6 @@ export default function Software() {
     const newOffset = (e.selected * itemsPerPage) % products.length;
     setItemOffset(newOffset);
   };
-
 
   let content;
 
@@ -91,4 +90,3 @@ export default function Software() {
     </div>
   );
 }
-

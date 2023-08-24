@@ -4,11 +4,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import "../../styles/Pagination.scss";
 import {
-  allProducts,
+  allPosts,
   filterByBrand,
   productsError,
   productsStatus,
-} from "../../features/products/ProductsSlice";
+} from "../../features/posts/PostsSlice";
 import PaginationItems from "../pagination/PaginationItems";
 import SideBar from "../sidebar/Sidebar";
 
@@ -16,7 +16,7 @@ function BrandList() {
   const params = useParams();
   const filterKey = params.brand;
   const dispatch = useDispatch();
-  const products = useSelector(allProducts);
+  const products = useSelector(allPosts);
   const error = useSelector(productsError);
   const status = useSelector(productsStatus);
 
@@ -44,7 +44,7 @@ function BrandList() {
   switch (status) {
     case "loading":
       box = <>Loading...</>;
-      
+
       break;
     case "success":
       box =

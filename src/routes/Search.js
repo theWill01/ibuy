@@ -6,19 +6,19 @@ import Pagination from "../components/pagination/Pagination";
 import PaginationItems from "../components/pagination/PaginationItems";
 import SideBar from "../components/sidebar/Sidebar";
 import {
-  allProducts,
+  allPosts,
   editProducts,
   fetchProducts,
   productsStatus,
   searchProducts,
-} from "../features/products/ProductsSlice";
+} from "../features/posts/PostsSlice";
 import axiosInstance from "../services/Axios";
 
 const Search = () => {
   const params = useParams();
   const searchInput = params.search;
   const dispatch = useDispatch();
-  const products = useSelector(allProducts);
+  const products = useSelector(allPosts);
   const status = useSelector(productsStatus);
   const [currentPage, setCurrentPage] = useState(1);
   const [productsPerPage, setProductsPerPage] = useState(6);
@@ -33,12 +33,10 @@ const Search = () => {
 
   const paginate = results.slice(firstPageIndex, lastPageIndex);
 
-
   useEffect(() => {
     if (status === "idle") {
       try {
-       dispatch(searchProducts(searchInput));
-       
+        dispatch(searchProducts(searchInput));
       } catch (error) {
         return error.message;
       }

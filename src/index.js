@@ -11,21 +11,17 @@ import {
 } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
 import ErrorPage from "./routes/ErrorPage";
-import SingleProductsPage, {
-  testing,
-} from "./features/products/SingleProductsPage";
+import SingleProductsPage, { testing } from "./features/posts/SinglePost";
 import Paginate from "./routes/Paginate";
 import { store } from "./app/store";
 import { Provider } from "react-redux";
 import Home from "./routes/home/Home";
 import Search from "./routes/Search";
-import UpdatePost from "./features/products/UpdatePost";
-import { getAllPosts } from "./features/products/ProductsList";
+import UpdatePost from "./features/posts/UpdatePost";
+import { getAllPosts } from "./pages/posts/PostsList";
 import { HashRouter } from "react-router-dom";
-import All from "./pages/All";
-const LazyProductsList = React.lazy(() =>
-  import("./features/products/ProductsList")
-);
+import PostsLayout from "./pages/posts/PostsLayout";
+const LazyPostsList = React.lazy(() => import("./pages/posts/PostsList"));
 
 const LazyBrandList = React.lazy(() => import("./components/brand/BrandList"));
 const LazyPrice = React.lazy(() => import("./components/brand/Price"));
@@ -45,31 +41,28 @@ const fb = () => {
 
 const router = createHashRouter(
   createRoutesFromElements(
-    <>
-      <Route path="/" element={<App />} errorElement={<ErrorPage />}>
-        <Route index element={<Home />} />
-        <Route path="/update/:postId/:postTitle" element={<UpdatePost />} />
-        <Route path="/search/:search" element={<Search />} />
-        <Route path="/products/:brand" element={<LazyBrandList />} />
-        <Route path="/price/:minPrice/:maxPrice" element={<LazyPrice />} />
-        <Route path="/software/:software" element={<LazySoftware />} />
-        <Route path="/year/:year" element={<LazyYear />} />
-        <Route path="/upload" element={<LazyUploadService />} />
-        <Route path="paginate" element={<Paginate />} />
-        <Route path="*" element={<ErrorPage />} />
-      
-      </Route>
+    <Route path="/" element={<App />} errorElement={<ErrorPage />}>
+      <Route index element={<Home />} />
+      <Route path="update/:postId/:postTitle" element={<UpdatePost />} />
+      <Route path="search/:search" element={<Search />} />
+      <Route path="/products/:brand" element={<LazyBrandList />} />
+      <Route path="price/:minPrice/:maxPrice" element={<LazyPrice />} />
+      <Route path="software/:software" element={<LazySoftware />} />
+      <Route path="year/:year" element={<LazyYear />} />
+      <Route path="upload" element={<LazyUploadService />} />
+      <Route path="paginate" element={<Paginate />} />
+      <Route path="*" element={<ErrorPage />} />
+      <Route path="/products">
         <Route
-        path="/products/all"
-        element={
-          <Suspense fallback={fb}>
-            <LazyProductsList />
-          </Suspense>
-        }
-        loader={() => {
-          return getAllPosts();
-        }}
-      />
+          index
+          element={
+            <Suspense>
+              <LazyPostsList />
+            </Suspense>
+          }
+          loader={getAllPosts}
+        />
+      </Route>
       <Route
         path="/products/:brand/:title/:id"
         element={<SingleProductsPage />}
@@ -77,7 +70,7 @@ const router = createHashRouter(
           return testing(params.id);
         }}
       />
-    </>
+    </Route>
   )
 );
 const root = ReactDOM.createRoot(document.getElementById("root"));

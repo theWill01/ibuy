@@ -8,7 +8,7 @@ import {
   singleItem,
   editPost,
   productsStatus,
-} from "./ProductsSlice";
+} from "./PostsSlice";
 
 function UpdatePost() {
   const params = useParams();

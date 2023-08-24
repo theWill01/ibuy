@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import "./ShopByBrands.scss";
-import { data } from "../../db/data";
+import { data } from "../../assets/helpers/Data";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
-const brands = data[0].brands;
+const brands = data.brands;
 
 export default function ShopByBrands() {
   const links =
@@ -31,12 +31,12 @@ export default function ShopByBrands() {
         <h1 className="text-[0.95rem]">
           <strong>Shop by Brands</strong>{" "}
         </h1>{" "}
-        <a
-          href={"/products/all"}
+        <Link
+          to={"/products"}
           className="text-[0.95rem]"
         >
           <strong>See All Brands</strong>
-        </a>
+        </Link>
       </div>
       <div className={"category-links border border-black overflow-hidden mb-5"}>
         {links}

@@ -1,0 +1,62 @@
+.image {
+  filter: drop-shadow(15px 10px 9px #4e4e4e);
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+}
+
+.product-detail {
+  border: 1px solid black;
+  height: 25px;
+  padding-left: 0.1rem;
+  align-items: center;
+}
+
+.price {
+  border: 1px solid black;
+  height: 25px;
+  padding-left: 0.1rem;
+  align-items: center;
+}
+
+@media only screen and (min-width: 640px) {
+  .product-detail {
+    border: 1px solid black;
+    height: 25px;
+    align-items: center;
+    font-size: 0.7rem;
+  }
+  .image {
+    filter: drop-shadow(15px 10px 9px #4e4e4e);
+    width: 156px;
+    height: 126px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .image {
+    filter: drop-shadow(15px 10px 9px #4e4e4e);
+    width: 104px;
+    height: 105px;
+  }
+  .product-detail {
+    border: 1px solid black;
+    height: 25px;
+    align-items: center;
+    font-size: 0.7rem;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .image {
+    filter: drop-shadow(15px 10px 9px #4e4e4e);
+    width: 120px;
+    height: 150px;
+  }
+  .product-detail {
+    border: 1px solid black;
+    height: 25px;
+    align-items: center;
+    font-size: 0.9rem;
+  }
+}
+
+/*# sourceMappingURL=Paginate.css.map */

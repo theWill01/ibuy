@@ -1,8 +1,8 @@
 import React from "react";
-import { data } from "../../db/data";
+import { data } from "../../assets/helpers/Data";
 
 export default function Conditions() {
-  const texts = data[0].texts;
+  const texts = data.texts;
 
   const deviceConditions = texts.map((text) => (
     <span
@@ -18,7 +18,7 @@ export default function Conditions() {
         <li>{text.warranty}</li>
       </ul>
       <p className=" text-[#709ad2] xl:absolute xl:top-[9.8rem] cursor-pointer">
-        {text.link} >
+        {text.link} 
       </p>
     </span>
   ));

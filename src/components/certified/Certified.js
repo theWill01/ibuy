@@ -1,9 +1,8 @@
 import React from "react";
 import "./Certified.scss";
-import { data } from "../../db/data";
-
+import { data } from "../../assets/helpers/Data";
 export default function Certified() {
-  const files = data[0].files;
+  const files = data.files;
 
   const renderImages = files.map((file, idx) => {
     return (

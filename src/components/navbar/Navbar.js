@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import "./Navbar.scss";
-import CartList from "../../features/cart/CartList";
+import CartItems from "../cart/CartItems";
 import { cartItems } from "../../features/cart/CartSlice";
 import Search from "../../assets/images/search.svg";
 import Close from "../../assets/images/close.png";
@@ -152,7 +152,7 @@ export default function Navbar() {
         {cart.length > 0 ? (
           //CART CONTENTS
           <>
-            <CartList />
+            <CartItems />
           </>
         ) : (
           //CART PLACEHOLDER TEXTS

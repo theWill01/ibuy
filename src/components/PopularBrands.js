@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import "../styles/PopularBrands.scss";
-import { data } from "../db/data";
-
-const brands = data[0].popularBrands;
+import { data } from "../assets/helpers/Data";
+const brands = data.popularBrands;
 
 export const popularBrands2 = brands[4].items.map((brand, idx) => {
   return (

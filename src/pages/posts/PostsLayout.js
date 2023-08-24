@@ -1,7 +1,7 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 
-const All = () => {
+const PostsLayout = () => {
   return (
     <div>
       All <Outlet />
@@ -9,4 +9,4 @@ const All = () => {
   );
 };
 
-export default All;
+export default PostsLayout;

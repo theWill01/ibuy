@@ -4,12 +4,12 @@ import { useDispatch, useSelector } from "react-redux";
 import ReactPaginate from "react-paginate";
 import PaginationItems from "../../components/pagination/PaginationItems";
 import axiosInstance from "../../services/Axios";
-import { singleItem } from "../products/ProductsSlice";
+import { singleItem } from "../posts/PostsSlice";
 import { fetchSimilarBrand, requestStatus, sameItems } from "./SameBrandSlice";
-import {useLoaderData} from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 
 const SameBrand = () => {
-  const loaderValue = useLoaderData()
+  const loaderValue = useLoaderData();
 
   const dispatch = useDispatch();
   const items = useSelector(sameItems);
@@ -23,12 +23,10 @@ const SameBrand = () => {
   const currentItems = items.slice(itemOffset, endOffset);
   const brand = loaderValue[0].brand;
   useEffect(() => {
-
     if (status === "idle") {
       dispatch(fetchSimilarBrand(brand));
     }
   }, [itemsLength, dispatch, status, brand]);
-
 
   let page = "";
 

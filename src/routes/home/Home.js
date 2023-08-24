@@ -10,7 +10,7 @@ import BannerImg2 from "../../assets/images/banner-img2.jpeg";
 import { popularBrands2 } from "../../components/PopularBrands";
 import Certified from "../../components/certified/Certified";
 import Conditions from "../../components/conditions/Conditions";
-import { data } from "../../db/data";
+import { data } from "../../assets/db/data";
 import ShopByBrands from "../../components/brand/ShopByBrands";
 
 const certified = <Certified />;
@@ -18,18 +18,18 @@ const conditions = <Conditions />;
 const shopByBrands = <ShopByBrands />;
 
 export default function Home() {
-  const promise = data[0].promise;
-  const question = data[0].questions;
+  const promise = data.promise;
+  const question = data.questions;
 
-  const promises = promise.map((promise, idx) => (
+  const promises = promise.map((result, idx) => (
     <figure
       key={idx}
       className="w-[99%] border border-blue-300 sm-[600px]:h-[140px] md:w-[240px] md:h-[180px] lg:w-[180px] xl:h-[230px] xl:w-[230px]"
       style={{ borderRadius: "5px" }}
     >
       <img
-        src={promise.image}
-        alt={promise.header}
+        src={result.image}
+        alt={result.header}
         className={
           "w-[80px] h-[70px] lg:w-[60px] lg:h-[50px] xl:w-[80px] xl:h-[70px]"
         }
@@ -38,14 +38,14 @@ export default function Home() {
 
       <figcaption className="px-[0.5rem]">
         <h1 className="text-[0.95rem] lg:text-[0.85rem] xl:text-[1rem] text-start">
-          {promise.header}
+          {result.header}
         </h1>
         <p className="text-[0.7rem] xl:text-[0.8rem] text-left">
-          {promise.body}
+          {result.body}
         </p>
         <Link to={""}>
           <p className="text-left relative top-1 text-[#4467c9] text-[0.55rem]xl:text-[0.7rem]">
-            {promise.extra}
+            {result.extra}
           </p>
         </Link>
       </figcaption>
@@ -86,7 +86,7 @@ export default function Home() {
       <article className="h-[62.5em] md:h-[499px] xl:h-[565px] border border-black">
         <PopularBrands />
       </article>
-      <article className="gift flex-col  ">
+      <article className="gift flex-col ">
         <div className="img-box flex-col">
           <span>
             <h5>ibuy renew</h5>

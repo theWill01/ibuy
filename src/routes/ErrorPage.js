@@ -1,16 +1,13 @@
-import { useRouteError } from "react-router-dom";
-
+import { isRouteErrorResponse, useRouteError } from "react-router-dom";
 
 export default function ErrorPage() {
-  
+  let error = useRouteError();
 
-    return (
-      <div>
-        <h1>OOPS!!!</h1>
-        <p> something went wrong</p>
-        <p>try again....</p>
-          <p>ROUTE ISSUE</p>
-      </div>
-    );
-
+  return isRouteErrorResponse(error) ? (
+    <h1>
+      {error.status} {error.statusText} 
+    </h1>
+  ) : (
+    <h1>{error.message || error} </h1>
+  );
 }

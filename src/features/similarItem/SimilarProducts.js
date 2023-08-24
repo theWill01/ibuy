@@ -3,20 +3,20 @@ import { useDispatch, useSelector } from "react-redux";
 import Rating from "../../components/rating/Rating";
 import axiosInstance from "../../services/Axios";
 import {
-  allProducts,
+  allPosts,
   filterByRam,
   productsStatus,
   similarItems,
   singleItem,
-} from "../products/ProductsSlice";
+} from "../posts/PostsSlice";
 import ReactPaginate from "react-paginate";
 import PaginationItems from "../../components/pagination/PaginationItems";
 import "../../styles/Pagination.scss";
 import { fetchItems, requestStatus, similar } from "./SimilarItemSlice";
-import {useLoaderData} from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 
 const SimilarProducts = (props) => {
-  const loaderVal = useLoaderData()
+  const loaderVal = useLoaderData();
   const dispatch = useDispatch();
   const singleProduct = useSelector(singleItem);
   const similarProducts = useSelector(similar);

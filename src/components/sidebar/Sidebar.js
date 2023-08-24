@@ -1,7 +1,7 @@
 import { setMinutes } from "date-fns";
 import { Children, useState } from "react";
 import { useDispatch } from "react-redux";
-import { data } from "../../db/data";
+import { data } from "../../assets/helpers/Data";
 import axiosInstance from "../../services/Axios";
 const years = [
   { year: 2019 },
@@ -12,7 +12,7 @@ const years = [
 ];
 
 export default function SideBar() {
-  const brands = data[0].brands;
+  const brands = data.brands;
   const [values, setValues] = useState({ min: "", max: "" });
   const inputChange = (e) => {
     setValues({ ...values, [e.target.name]: [e.target.value] });

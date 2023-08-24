@@ -2,11 +2,11 @@ import React, { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import {
-  allProducts,
+  allPosts,
   fetchProducts,
   filterByPrice,
   productsStatus,
-} from "../../features/products/ProductsSlice";
+} from "../../features/posts/PostsSlice";
 import axiosInstance from "../../services/Axios";
 import PaginationItems from "../pagination/PaginationItems";
 import SideBar from "../sidebar/Sidebar";

@@ -5,11 +5,11 @@ import SideBar from "../components/sidebar/Sidebar";
 import PaginationItems from "../components/pagination/PaginationItems";
 import ReactPaginate from "react-paginate";
 import {
-  allProducts,
+  allPosts,
   productsStatus,
   filterYear,
   byYear,
-} from "../features/products/ProductsSlice";
+} from "../features/posts/PostsSlice";
 import Pagination from "../components/pagination/Pagination";
 import axiosInstance from "../services/Axios";
 import "../styles/Pagination.scss";

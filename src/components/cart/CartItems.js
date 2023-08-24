@@ -7,13 +7,13 @@ import {
   addQuantity,
   removeSingleProduct,
   clearCart,
-} from "./CartSlice";
+} from "../../features/cart/CartSlice";
 import Plus from "../../assets/images/plus.png";
 import Minus from "../../assets/images/minus.png";
 import Arrow from "../../assets/images/right-arrow.png";
 import Remove from "../../assets/images/remove.png";
 
-const CartList = () => {
+const CartItems = () => {
   const dispatch = useDispatch();
   const cart = useSelector(cartItems);
 
@@ -118,4 +118,4 @@ const CartList = () => {
   );
 };
 
-export default CartList;
+export default CartItems;
