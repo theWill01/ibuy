@@ -6,7 +6,7 @@ import Pagination from "../components/pagination/Pagination";
 import PaginationItems from "../components/pagination/PaginationItems";
 import SideBar from "../components/sidebar/Sidebar";
 import {
-  allPosts,
+  allProducts,
   editProducts,
   fetchProducts,
   productsStatus,
@@ -18,7 +18,7 @@ const Search = () => {
   const params = useParams();
   const searchInput = params.search;
   const dispatch = useDispatch();
-  const products = useSelector(allPosts);
+  const products = useSelector(allProducts);
   const status = useSelector(productsStatus);
   const [currentPage, setCurrentPage] = useState(1);
   const [productsPerPage, setProductsPerPage] = useState(6);

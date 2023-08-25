@@ -8,7 +8,7 @@ const editFromStorage = JSON.parse(
 );
 //OUR INITIAL STATE
 const initialState = {
-  posts: [],
+  products: [],
   post: [],
   updatedPost: [editFromStorage],
   status: "idle", //LOADING // FULFILLED // ERROR //
@@ -16,7 +16,7 @@ const initialState = {
 };
 
 export const filterByBrand = createAsyncThunk(
-  "posts/filterByBrand",
+  "products/filterByBrand",
   async (filterKey) => {
     try {
       const response = await axiosInstance.get(`products?brand=${filterKey}`);
@@ -28,7 +28,7 @@ export const filterByBrand = createAsyncThunk(
 );
 
 export const softwareFilter = createAsyncThunk(
-  "posts/softwareFilter",
+  "products/softwareFilter",
   async (software) => {
     try {
       const response = await axiosInstance.get(`products?software=${software}`);
@@ -40,7 +40,7 @@ export const softwareFilter = createAsyncThunk(
 );
 
 export const searchProducts = createAsyncThunk(
-  "posts/searchProducts",
+  "products/searchProducts",
   async (value) => {
     try {
       const response = await axiosInstance.get(`products?q=${value}`);
@@ -52,7 +52,7 @@ export const searchProducts = createAsyncThunk(
 );
 
 export const filterYear = createAsyncThunk(
-  "posts/yearFilter",
+  "products/yearFilter",
   async (filterKey) => {
     try {
       const response = await axiosInstance.get(`products?year=${filterKey}`);
@@ -64,7 +64,7 @@ export const filterYear = createAsyncThunk(
 );
 
 export const filterById = createAsyncThunk(
-  "posts/filterById",
+  "products/filterById",
   async (productId) => {
     try {
       const response = await axiosInstance.get(`products?id=${productId}`);
@@ -75,7 +75,7 @@ export const filterById = createAsyncThunk(
   }
 );
 export const filterByRam = createAsyncThunk(
-  "posts/filterByRam",
+  "products/filterByRam",
   async (ram) => {
     try {
       const response = await axiosInstance.get(`products?ram=${ram}`);
@@ -88,7 +88,7 @@ export const filterByRam = createAsyncThunk(
 
 //ADD POST ASYNC REQUEST
 export const addProducts = createAsyncThunk(
-  "posts/addPostItems",
+  "products/addPostItems",
   async (formData) => {
     try {
       const response = await axiosInstance.post("products", formData);
@@ -100,7 +100,7 @@ export const addProducts = createAsyncThunk(
   }
 );
 
-export const editPost = createAsyncThunk("posts/editPost", async (post) => {
+export const editPost = createAsyncThunk("products/editPost", async (post) => {
   try {
     const response = await axiosInstance.put(`products/${post.id}`, post);
     return response.data;
@@ -109,9 +109,9 @@ export const editPost = createAsyncThunk("posts/editPost", async (post) => {
   }
 });
 
-//THIS IS THE posts SLICE
+//THIS IS THE products SLICE
 const ProductsSlice = createSlice({
-  name: "posts",
+  name: "products",
   initialState,
   //STATE REDUCERS
   reducers: {
@@ -128,12 +128,17 @@ const ProductsSlice = createSlice({
     },
     updateProduct(state, action) {
       let newPost = [...state.post];
-      const data = action.payload[0];
-      const currentData = JSON.parse(data.images);
-      let test = { ...data, images: currentData };
-      console.log(test);
+      const payload = action.payload;
+      const file = JSON.parse(payload[0].images);
+      let check = newPost.find((item) => item.id !== payload.id);
+      if (!check) {
+        check = { ...payload[0], images: file };
+        newPost.push(check);
+      }
 
-      state.posts = data;
+      state.post = newPost;
+
+      console.log(file);
     },
   },
   //ASYNC CALLS REDUCERS
@@ -146,7 +151,7 @@ const ProductsSlice = createSlice({
       })
       .addCase(searchProducts.fulfilled, (state, action) => {
         state.status = "success";
-        state.posts = state.posts.concat(action.payload);
+        state.products = state.products.concat(action.payload);
       })
 
       //POST REDUCER
@@ -157,7 +162,7 @@ const ProductsSlice = createSlice({
 
       .addCase(addProducts.fulfilled, (state, action) => {
         state.status = "success";
-        state.posts = state.posts.push(action.payload);
+        state.products = state.products.push(action.payload);
       })
       .addCase(addProducts.rejected, (state, action) => {
         state.status = "rejected";
@@ -168,7 +173,7 @@ const ProductsSlice = createSlice({
       //FILTER BY SOFTWARE REDUCER
       .addCase(softwareFilter.fulfilled, (state, action) => {
         state.status = "success";
-        state.posts = state.posts.concat(action.payload);
+        state.products = state.products.concat(action.payload);
       })
 
       //FILTER BY YEAR REDUCER
@@ -183,7 +188,7 @@ const ProductsSlice = createSlice({
       })
       .addCase(filterByBrand.fulfilled, (state, action) => {
         state.status = "success";
-        state.posts = state.posts.concat(action.payload);
+        state.products = state.products.concat(action.payload);
       })
       .addCase(filterByBrand.rejected, (state, action) => {
         state.status = "failed";
@@ -192,32 +197,32 @@ const ProductsSlice = createSlice({
       //FILTER BY ID REDUCER
       .addCase(filterById.fulfilled, (state, action) => {
         state.status = "success";
-        state.posts = state.posts.concat(action.payload);
+        state.products = state.products.concat(action.payload);
       })
       .addCase(editPost.fulfilled, (state, action) => {
         state.status = "success";
-        state.posts = state.posts.concat(action.payload);
+        state.products = state.products.concat(action.payload);
       });
   },
 });
 //PRODUCTS SLICE EXPORTS
-export const singlePost = (state) => state.posts.posts;
-export const productsError = (state) => state.posts.error;
-export const allPosts = (state) => state.posts.products;
-export const byYear = (state) => state.posts.year;
-export const singleItem = (state) => state.posts.posts[0];
-export const imagess = (state) => state.posts.posts[0];
-export const posts = (state) => state.posts.updatedPost[0];
-export const similarItems = (state) => state.posts.similarItem;
-export const productsStatus = (state) => state.posts.status;
+export const singlePost = (state) => state.products.post[0];
+export const productsError = (state) => state.products.error;
+export const allProducts = (state) => state.products.products;
+export const byYear = (state) => state.products.year;
+export const singleItem = (state) => state.products.products[0];
+export const imagess = (state) => state.products.products[0];
+export const posts = (state) => state.products.updatedPost[0];
+export const similarItems = (state) => state.products.similarItem;
+export const productsStatus = (state) => state.products.status;
 export const productsById = (state, productId) =>
-  state.posts.posts.find((product) => product.id === productId);
+  state.products.products.find((product) => product.id === productId);
 export const byContent = (state, content) =>
-  state.posts.posts.filter((product) => product.content === content);
+  state.products.products.filter((product) => product.content === content);
 export const filterByPrice = (state, minPrice, maxPrice) =>
-  state.posts.posts.filter(
+  state.products.products.filter(
     //our price is greater or equal to current price and less than or equal to current price
-    (posts) => posts.price >= minPrice && posts.price <= maxPrice
+    (products) => products.price >= minPrice && products.price <= maxPrice
   );
 
 export const { updatePost, updateProduct } = ProductsSlice.actions;

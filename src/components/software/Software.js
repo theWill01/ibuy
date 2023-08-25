@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import ReactPaginate from "react-paginate";
 import {
-  allPosts,
+  allProducts,
   productsStatus,
   softwareFilter,
 } from "../../features/posts/PostsSlice";
@@ -14,9 +14,8 @@ export default function Software() {
   const params = useParams();
   const dispatch = useDispatch();
   const software = params.software;
-  const products = useSelector(allPosts);
+  const products = useSelector(allProducts);
   const status = useSelector(productsStatus);
-
   const itemsPerPage = 8;
   const [currentItems, setCurrentItems] = useState([]);
   const [itemOffset, setItemOffset] = useState(0);

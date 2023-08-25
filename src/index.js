@@ -11,7 +11,7 @@ import {
 } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
 import ErrorPage from "./routes/ErrorPage";
-import SingleProductsPage, { testing } from "./features/posts/SinglePost";
+import SinglePost, { testing } from "./pages/posts/SinglePost";
 import Paginate from "./routes/Paginate";
 import { store } from "./app/store";
 import { Provider } from "react-redux";
@@ -45,14 +45,14 @@ const router = createHashRouter(
       <Route index element={<Home />} />
       <Route path="update/:postId/:postTitle" element={<UpdatePost />} />
       <Route path="search/:search" element={<Search />} />
-      <Route path="/products/:brand" element={<LazyBrandList />} />
+      <Route path="products/:brand" element={<LazyBrandList />} />
       <Route path="price/:minPrice/:maxPrice" element={<LazyPrice />} />
       <Route path="software/:software" element={<LazySoftware />} />
       <Route path="year/:year" element={<LazyYear />} />
       <Route path="upload" element={<LazyUploadService />} />
       <Route path="paginate" element={<Paginate />} />
-      <Route path="*" element={<ErrorPage />} />
-      <Route path="/products">
+
+      <Route path="products">
         <Route
           index
           element={
@@ -63,13 +63,16 @@ const router = createHashRouter(
           loader={getAllPosts}
         />
       </Route>
-      <Route
-        path="/products/:brand/:title/:id"
-        element={<SingleProductsPage />}
-        loader={({ params }) => {
-          return testing(params.id);
-        }}
-      />
+      <Route path="products/:brand/:title/:id">
+        <Route
+          index
+          element={<SinglePost />}
+          loader={({ params }) => {
+            return testing(params.id);
+          }}
+        />
+      </Route>
+      <Route path="*" element={<ErrorPage />} />
     </Route>
   )
 );

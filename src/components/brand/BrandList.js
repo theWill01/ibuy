@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import "../../styles/Pagination.scss";
 import {
-  allPosts,
+  allProducts,
   filterByBrand,
   productsError,
   productsStatus,
@@ -16,7 +16,7 @@ function BrandList() {
   const params = useParams();
   const filterKey = params.brand;
   const dispatch = useDispatch();
-  const products = useSelector(allPosts);
+  const products = useSelector(allProducts);
   const error = useSelector(productsError);
   const status = useSelector(productsStatus);
 

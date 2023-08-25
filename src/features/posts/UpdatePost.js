@@ -8,6 +8,7 @@ import {
   singleItem,
   editPost,
   productsStatus,
+  updateProduct,
 } from "./PostsSlice";
 
 function UpdatePost() {
