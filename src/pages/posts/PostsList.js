@@ -14,7 +14,7 @@ import axiosInstance from "../../services/Axios";
 
 export default function PostsList() {
   const allPosts = useLoaderData();
-  console.log(allPosts);
+  
   const itemsPerPage = 12;
   const [itemOffset, setItemOffset] = useState(0);
   const [pageCount, setPageCount] = useState(0);
@@ -41,13 +41,9 @@ export default function PostsList() {
     });
 
   return (
-    <section className=" h-[100%] border border-green-500 flex w-full p-0">
-      {/*OUR PAGE SIDE NAVIGATION */}
-      <article className="w-[40%] md:w-[30%] lg:w-[24%] xl:w-[22%] hidden sm:block border border-black">
-        <SideBar />
-      </article>
+    <section className=" h-[100%] w-[99%] md:w-[70%] lg:w-[76%] xl:w-[78%]  border border-green-500 flex w-full p-0">
       {/*OUR PAGE CONTENT */}
-      <article className="w-[99%] md:w-[70%] lg:w-[76%] xl:w-[78%] h-full border border-red-500 flex flex-col lg:px-1">
+      <article className="w-[99%] h-full border border-red-500 flex flex-col lg:px-1">
         <h1 className="font-bold  xl:text-[1.7rem] border border-green-500">
           ALL Brands
         </h1>

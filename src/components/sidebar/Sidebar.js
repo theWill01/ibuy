@@ -3,6 +3,7 @@ import { Children, useState } from "react";
 import { useDispatch } from "react-redux";
 import { data } from "../../assets/helpers/Data";
 import axiosInstance from "../../services/Axios";
+import { Link } from "react-router-dom";
 const years = [
   { year: 2019 },
   { year: 2020 },
@@ -39,7 +40,7 @@ export default function SideBar() {
         }
       >
         <input type={"radio"} name={"brands"} value={item.key} />{" "}
-        <a href={`/products/${item.key}`}>{item.label.toLowerCase()}</a>
+        <Link to={`/products/${item.key}`}>{item.label.toLowerCase()}</Link>
       </li>
     </label>
   ));
@@ -49,10 +50,10 @@ export default function SideBar() {
       <li className="text-[0.85rem] md:text-[0.65rem] xl:text-[0.85rem] h-[25px] md:h-[30px] xl:h-[30px]">
         <label>
           <input type={"radio"} name={"price"} />
-          <a href={`/price/${minPrice}/${maxPrice}`}>
+          <Link to={`/price/${minPrice}/${maxPrice}`}>
             {" "}
             from ${minPrice} to ${maxPrice}
-          </a>
+          </Link>
         </label>
         <hr />
       </li>
@@ -92,11 +93,11 @@ export default function SideBar() {
       {/*CATEGORY LINK FORM */}
       <form>
         {/*BRAND CATEGORY LINK */}
-        <a href={"/products/all"}>
+        <Link to={"/products"}>
           <h3 className="border w-[100%] h-[25px] md:h-[30px] xl:h-[30px] bg-[#709ad2] text-[1rem]">
             <strong>All Brands</strong>
           </h3>
-        </a>
+        </Link>
         {brand}
         <hr />
 

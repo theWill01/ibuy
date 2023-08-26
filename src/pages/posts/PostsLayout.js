@@ -1,10 +1,15 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-
+import SideBar from "../../components/sidebar/Sidebar";
 const PostsLayout = () => {
   return (
-    <div>
-      All <Outlet />
+    <div className="flex">
+      {/*OUR PAGE SIDE NAVIGATION */}
+      <article className="w-[40%] md:w-[30%] lg:w-[24%] xl:w-[22%] hidden sm:block border border-black">
+        <SideBar />
+      </article>
+     
+      <Outlet />
     </div>
   );
 };

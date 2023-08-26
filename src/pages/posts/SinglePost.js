@@ -4,7 +4,6 @@ import { useLoaderData } from "react-router-dom";
 import {
   allImages,
   productsStatus,
-  singlePost,
   updateProduct,
 } from "../../features/posts/PostsSlice";
 import { addToCart } from "../../features/cart/CartSlice";
@@ -17,11 +16,11 @@ import axiosInstance from "../../services/Axios";
 export default function SinglePost() {
   const loaderData = useLoaderData();
   const dispatch = useDispatch();
-  const product = loaderData;
-  const data = useSelector(singlePost);
-  const thumbNails = JSON.parse(loaderData[0].images);
-    const [dp, setDp] = useState(thumbNails[0].image);
+  const product = loaderData[0];
  
+  const thumbNails = JSON.parse(loaderData[0].images);
+  const [dp, setDp] = useState(thumbNails[0].image);
+
   const status = useSelector(productsStatus);
 
   const itemImages = thumbNails.map((item, idx) => {
@@ -44,9 +43,9 @@ export default function SinglePost() {
 
   //____________________________USE EFFECT_______________________________
   useEffect(() => {
-    dispatch(updateProduct(loaderData));
+  
     localStorage.setItem("updated post", JSON.stringify(product));
-  }, [status, product, dispatch, loaderData]);
+  }, [status, product, dispatch]);
 
   const color = (product) => (
     <div className="flex border border-black align-[center] relative">
@@ -177,7 +176,5 @@ export default function SinglePost() {
 
 export const testing = async (val) => {
   const response = await axiosInstance.get(`products?id=${val}`);
-  console.log(val);
-  console.log(response);
   return response.data;
 };

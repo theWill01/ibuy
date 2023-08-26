@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
 import "../../styles/Pagination.scss";
 import {
   allProducts,
@@ -11,15 +11,15 @@ import {
 } from "../../features/posts/PostsSlice";
 import PaginationItems from "../pagination/PaginationItems";
 import SideBar from "../sidebar/Sidebar";
+import axiosInstance from "../../services/Axios";
 
 function BrandList() {
+  const products = useLoaderData();
   const params = useParams();
-  const filterKey = params.brand;
-  const dispatch = useDispatch();
-  const products = useSelector(allProducts);
+  // const products = useSelector(allProducts);
   const error = useSelector(productsError);
   const status = useSelector(productsStatus);
-
+  const filterKey = params.brand;
   const itemsPerPage = 8;
   const [currentItems, setCurrentItems] = useState([]);
   const [itemOffset, setItemOffset] = useState(0);
@@ -29,10 +29,7 @@ function BrandList() {
     const endOffset = itemOffset + itemsPerPage;
     setCurrentItems(products.slice(itemOffset, endOffset));
     setPageCount(Math.ceil(products.length / itemsPerPage));
-    if (status === "idle") {
-      dispatch(filterByBrand(filterKey));
-    }
-  }, [status, dispatch, filterKey, itemOffset, products]);
+  }, [status, itemOffset, products]);
 
   const handlePageClick = (e) => {
     const newOffset = (e.selected * itemsPerPage) % products.length;
@@ -66,9 +63,6 @@ function BrandList() {
 
   return (
     <section className="category-container w-100 h-[100%] flex">
-      <article className="w-[30%] h-full border border-black hidden sm:block ">
-        <SideBar />
-      </article>
       <article className="w-full h-full sm:w-[80%] flex flex-col justify-between border border-black">
         {" "}
         <div className="w-[100%] h-[95%] border border-black">
@@ -102,3 +96,8 @@ function BrandList() {
 }
 
 export default BrandList;
+
+export const checkForBrand = async (val) => {
+  const result = await axiosInstance.get(`products?brand=${val}`);
+  return result.data;
+};

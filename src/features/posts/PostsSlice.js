@@ -9,7 +9,6 @@ const editFromStorage = JSON.parse(
 //OUR INITIAL STATE
 const initialState = {
   products: [],
-  post: [],
   updatedPost: [editFromStorage],
   status: "idle", //LOADING // FULFILLED // ERROR //
   error: null,
@@ -126,20 +125,7 @@ const ProductsSlice = createSlice({
       }
       localStorage.setItem("updated post", JSON.stringify(newPost));
     },
-    updateProduct(state, action) {
-      let newPost = [...state.post];
-      const payload = action.payload;
-      const file = JSON.parse(payload[0].images);
-      let check = newPost.find((item) => item.id !== payload.id);
-      if (!check) {
-        check = { ...payload[0], images: file };
-        newPost.push(check);
-      }
 
-      state.post = newPost;
-
-      console.log(file);
-    },
   },
   //ASYNC CALLS REDUCERS
   extraReducers(builder) {
@@ -206,7 +192,6 @@ const ProductsSlice = createSlice({
   },
 });
 //PRODUCTS SLICE EXPORTS
-export const singlePost = (state) => state.products.post[0];
 export const productsError = (state) => state.products.error;
 export const allProducts = (state) => state.products.products;
 export const byYear = (state) => state.products.year;

@@ -2,7 +2,7 @@ import { isRouteErrorResponse, useRouteError } from "react-router-dom";
 
 export default function ErrorPage() {
   let error = useRouteError();
-console.log(error)
+
   return isRouteErrorResponse(error) ? (
     <h1>
       {error.status} {error.statusText} 
