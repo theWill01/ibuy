@@ -19,7 +19,7 @@ import Home from "./routes/home/Home";
 import Search from "./routes/Search";
 import UpdatePost from "./features/posts/UpdatePost";
 import { getAllPosts } from "./pages/posts/PostsList";
-import PriceLayout from "./assets/layouts/PriceLayout";
+import PriceLayout from "./layouts/PriceLayout";
 import PostsLayout from "./pages/posts/PostsLayout";
 import BrandLayout from "./pages/BrandLayout";
 import { checkForBrand } from "./components/brand/BrandList";
@@ -53,6 +53,17 @@ const router = createHashRouter(
       <Route path="upload" element={<LazyUploadService />} />
       <Route path="paginate" element={<Paginate />} />
 
+     <Route path="/price/:minPrice/:maxPrice" element={<PriceLayout />}>
+          <Route
+            index
+            element={
+              <Suspense>
+                <LazyPrice />
+              </Suspense>
+            }
+          />
+        </Route>
+
       <Route path="products" element={<PostsLayout />}>
         <Route
           index
@@ -78,16 +89,7 @@ const router = createHashRouter(
           />
         </Route>
 
-        <Route path="/price/:minPrice/:maxPrice" element={<PriceLayout />}>
-          <Route
-            index
-            element={
-              <Suspense>
-                <LazyPrice />
-              </Suspense>
-            }
-          />
-        </Route>
+      
       </Route>
       <Route path="products/:brand/:title/:id">
         <Route

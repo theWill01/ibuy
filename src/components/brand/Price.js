@@ -95,3 +95,8 @@ export default function Price() {
     </section>
   );
 }
+
+
+export const check = async () => {
+  console.log("hey")
+}
