@@ -50,17 +50,7 @@ export const searchProducts = createAsyncThunk(
   }
 );
 
-export const filterYear = createAsyncThunk(
-  "products/yearFilter",
-  async (filterKey) => {
-    try {
-      const response = await axiosInstance.get(`products?year=${filterKey}`);
-      return response.data;
-    } catch (error) {
-      return error.message;
-    }
-  }
-);
+
 
 export const filterById = createAsyncThunk(
   "products/filterById",
@@ -163,11 +153,7 @@ const ProductsSlice = createSlice({
       })
 
       //FILTER BY YEAR REDUCER
-      .addCase(filterYear.fulfilled, (state, action) => {
-        state.status = "success";
-        state.year = state.year.concat(action.payload);
-      })
-
+   
       //FILTER BY BRAND REDUCER
       .addCase(filterByBrand.pending, (state, action) => {
         state.status = "loading";

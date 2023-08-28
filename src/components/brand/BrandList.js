@@ -16,7 +16,6 @@ import axiosInstance from "../../services/Axios";
 function BrandList() {
   const products = useLoaderData();
   const params = useParams();
-  // const products = useSelector(allProducts);
   const error = useSelector(productsError);
   const status = useSelector(productsStatus);
   const filterKey = params.brand;
@@ -29,37 +28,18 @@ function BrandList() {
     const endOffset = itemOffset + itemsPerPage;
     setCurrentItems(products.slice(itemOffset, endOffset));
     setPageCount(Math.ceil(products.length / itemsPerPage));
-  }, [status, itemOffset, products]);
+  }, [itemOffset, products]);
 
   const handlePageClick = (e) => {
     const newOffset = (e.selected * itemsPerPage) % products.length;
     setItemOffset(newOffset);
   };
 
-  let box;
-
-  switch (status) {
-    case "loading":
-      box = <>Loading...</>;
-
-      break;
-    case "success":
-      box =
-        currentItems &&
-        currentItems.map((item, index) => (
-          <PaginationItems item={item} filterKey={filterKey} key={index} />
-        ));
-
-      break;
-
-    case "failed":
-      box = <h1>OOOPS something went wrong : {error}</h1>;
-      break;
-
-    default:
-    case "idle":
-      break;
-  }
+  const box =
+    currentItems &&
+    currentItems.map((item, index) => (
+      <PaginationItems item={item} filterKey={filterKey} key={index} />
+    ));
 
   return (
     <section className="category-container w-100 h-[100%] flex">

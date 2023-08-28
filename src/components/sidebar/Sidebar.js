@@ -66,7 +66,7 @@ export default function SideBar() {
         <label>
           <hr />
           <input type={"radio"} name={"system"} />
-          <a href={`/${route}/${routeItem}`}>{content}</a>
+          <Link to={`/${route}/${routeItem}`}>{content}</Link>
         </label>
       </li>
     );
@@ -77,7 +77,7 @@ export default function SideBar() {
       key={index}
       className="text-[0.85rem] md:text-[0.65rem] xl:text-[0.9rem] h-[25px] md:h-[30px] xl:h-[30px]"
     >
-      <a href={`/year/${product.year}`}>{product.year}</a>
+      <Link to={`/year/${product.year}`}>{product.year}</Link>
       <hr />
     </li>
   ));

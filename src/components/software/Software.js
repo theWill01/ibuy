@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
 import ReactPaginate from "react-paginate";
 import {
   allProducts,
@@ -10,12 +10,14 @@ import {
 import SideBar from "../sidebar/Sidebar";
 import PaginationItems from "../pagination/PaginationItems";
 import "../../styles/Pagination.scss";
+import axiosInstance from "../../services/Axios";
+
 export default function Software() {
   const params = useParams();
   const dispatch = useDispatch();
   const software = params.software;
-  const products = useSelector(allProducts);
-  const status = useSelector(productsStatus);
+  const products = useLoaderData();
+
   const itemsPerPage = 8;
   const [currentItems, setCurrentItems] = useState([]);
   const [itemOffset, setItemOffset] = useState(0);
@@ -25,40 +27,21 @@ export default function Software() {
     const endOffset = itemOffset + itemsPerPage;
     setCurrentItems(products.slice(itemOffset, endOffset));
     setPageCount(Math.ceil(products.length / itemsPerPage));
-
-    if (status === "idle") {
-      dispatch(softwareFilter(software));
-    }
-  }, [status, dispatch, software, itemOffset, products]);
+  }, [itemOffset, products]);
 
   const handlePageClick = (e) => {
     const newOffset = (e.selected * itemsPerPage) % products.length;
     setItemOffset(newOffset);
   };
 
-  let content;
-
-  switch (status) {
-    case "loading":
-      content = <>Loading......</>;
-      break;
-    case "success":
-      content =
-        currentItems &&
-        currentItems.map((item) => <PaginationItems item={item} />);
-      break;
-
-    default:
-      break;
-  }
+  const content =
+    currentItems && currentItems.map((item) => <PaginationItems item={item} />);
 
   return (
-    <div className="flex h-full">
-      <article className="w-[30%] border border-black hidden sm:block">
-        <SideBar />
-      </article>
+    <div className="flex h-full w-[70%] border border-black ">
+   
 
-      <article className="w-full sm:w-[70%] h-full flex flex-col justify-between">
+      <article className="w-full sm:w-[100%] h-full flex flex-col justify-between">
         <div>
           <h1 className="text-[0.99rem]">
             <strong> {software.toUpperCase()}</strong>
@@ -89,3 +72,9 @@ export default function Software() {
     </div>
   );
 }
+
+export const checkSoftware = async (val) => {
+  const response = await axiosInstance.get(`products?software=${val}`);
+  console.log(response)
+  return response.data;
+};

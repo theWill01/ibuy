@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
 import {
   allPosts,
   fetchProducts,
@@ -14,33 +14,18 @@ import ReactPaginate from "react-paginate";
 
 export default function Price() {
   const params = useParams();
+  const products = useLoaderData();
   const minPrice = Number(params.minPrice);
   const maxPrice = Number(params.maxPrice);
-  const [price, setPrice] = useState([]);
   const itemsPerPage = 6;
   const [itemOffset, setItemOffset] = useState(0);
   const [pageCount, setPageCount] = useState(0);
-
-  const products = useCallback(async () => {
-    try {
-      const response = await axiosInstance.get(
-        `products?price_gte=${minPrice}&price_lte=${maxPrice}`
-      );
-      setPrice(response.data);
-    } catch (error) {
-      return error.message;
-    }
-  }, [minPrice, maxPrice]);
-
   const endOffset = itemOffset + itemsPerPage;
-  const currentItems = price.slice(itemOffset, endOffset);
+  const currentItems = products.slice(itemOffset, endOffset);
 
   useEffect(() => {
-    products();
-    return () => {
-      setPageCount(Math.ceil(price.length / itemsPerPage));
-    };
-  }, [products, price.length]);
+    return setPageCount(Math.ceil(products.length / itemsPerPage));
+  }, [products.length]);
 
   const handlePageClick = (e) => {
     const newOffset = (e.selected * itemsPerPage) % products.length;
@@ -57,11 +42,8 @@ export default function Price() {
     ));
 
   return (
-    <section className="w-[99%] flex">
+    <section className="flex w-[70%] border border-black sm:block">
       {" "}
-      <article className="w-[30%] border border-black hidden sm:block">
-        <SideBar />
-      </article>
       <article className="w-full sm:w-[70%] flex flex-col justify-between">
         <div>
           <span>
@@ -96,7 +78,10 @@ export default function Price() {
   );
 }
 
+export const priceRange = async ({ params }) => {
+  const response = await axiosInstance.get(
+    `products?price_gte=${params.minPrice}&price_lte=${params.maxPrice}`
+  );
 
-export const check = async () => {
-  console.log("hey")
-}
+  return response.data;
+};

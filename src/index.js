@@ -23,6 +23,9 @@ import PriceLayout from "./layouts/PriceLayout";
 import PostsLayout from "./pages/posts/PostsLayout";
 import BrandLayout from "./pages/BrandLayout";
 import { checkForBrand } from "./components/brand/BrandList";
+import { getPostByYear } from "./routes/Year";
+import { priceRange } from "./components/brand/Price";
+import { checkSoftware } from "./components/software/Software";
 const LazyPostsList = React.lazy(() => import("./pages/posts/PostsList"));
 
 const LazyBrandList = React.lazy(() => import("./components/brand/BrandList"));
@@ -47,22 +50,49 @@ const router = createHashRouter(
       <Route index element={<Home />} />
       <Route path="update/:postId/:postTitle" element={<UpdatePost />} />
       <Route path="search/:search" element={<Search />} />
+      <Route path="software/:software" element={<PostsLayout />}>
+        <Route
+          index
+          element={
+            <Suspense>
+              <LazySoftware />
+            </Suspense>
+          }
+          loader={({ params }) => {
+            return checkSoftware(params.software);
+          }}
+        />
+      </Route>
 
-      <Route path="software/:software" element={<LazySoftware />} />
-      <Route path="year/:year" element={<LazyYear />} />
+      <Route path="year/:year" element={<PostsLayout />}>
+        <Route
+          index
+          element={
+            <Suspense>
+              <LazyYear />
+            </Suspense>
+          }
+          loader={({ params }) => {
+            return getPostByYear({ params });
+          }}
+        />
+      </Route>
       <Route path="upload" element={<LazyUploadService />} />
       <Route path="paginate" element={<Paginate />} />
 
-     <Route path="/price/:minPrice/:maxPrice" element={<PriceLayout />}>
-          <Route
-            index
-            element={
-              <Suspense>
-                <LazyPrice />
-              </Suspense>
-            }
-          />
-        </Route>
+      <Route path="price/:minPrice/:maxPrice" element={<PostsLayout />}>
+        <Route
+          index
+          element={
+            <Suspense>
+              <LazyPrice />
+            </Suspense>
+          }
+          loader={({ params }) => {
+            return priceRange({ params });
+          }}
+        />
+      </Route>
 
       <Route path="products" element={<PostsLayout />}>
         <Route
@@ -88,14 +118,12 @@ const router = createHashRouter(
             }}
           />
         </Route>
-
-      
       </Route>
       <Route path="products/:brand/:title/:id">
         <Route
           index
           element={<SinglePost />}
-          loader={({ params }) => testing(params.id)}
+          loader={({ params }) => checkForBrand(params.id)}
         />
       </Route>
       <Route path="*" element={<ErrorPage />} />
