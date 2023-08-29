@@ -17,7 +17,7 @@ export default function SinglePost() {
   const loaderData = useLoaderData();
   const dispatch = useDispatch();
   const product = loaderData[0];
- 
+
   const thumbNails = JSON.parse(loaderData[0].images);
   const [dp, setDp] = useState(thumbNails[0].image);
 
@@ -59,7 +59,7 @@ export default function SinglePost() {
     </div>
   );
 
-  const stars = <Rating rate={product.rating} />;
+  const rating = <Rating rate={product.stars} />;
 
   return (
     <section className="flex h-[2660px] w-full sm:h-[2790px] md:h-[1450px] lg:h-full xl:h-[1500px] overflow-hidden align-[center] justify-center relative">
@@ -100,7 +100,7 @@ export default function SinglePost() {
             <div className={"item-images"}>{itemImages}</div>
             <ul className={"item-details"}>
               <li className="flex product-details md:text-[red]">
-                Rating :{stars}
+                Rating :{rating}
               </li>
               <li className="product-details">brand : {product.brand}</li>
               <li className="product-details">name : {product.title}</li>
@@ -174,7 +174,7 @@ export default function SinglePost() {
   );
 }
 
-export const testing = async (val) => {
+export const checkForPost = async (val) => {
   const response = await axiosInstance.get(`products?id=${val}`);
   return response.data;
 };

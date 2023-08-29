@@ -14,44 +14,6 @@ const initialState = {
   error: null,
 };
 
-export const filterByBrand = createAsyncThunk(
-  "products/filterByBrand",
-  async (filterKey) => {
-    try {
-      const response = await axiosInstance.get(`products?brand=${filterKey}`);
-      return response.data;
-    } catch (error) {
-      return error.message;
-    }
-  }
-);
-
-export const softwareFilter = createAsyncThunk(
-  "products/softwareFilter",
-  async (software) => {
-    try {
-      const response = await axiosInstance.get(`products?software=${software}`);
-      return (await response).data;
-    } catch (error) {
-      return error.message;
-    }
-  }
-);
-
-export const searchProducts = createAsyncThunk(
-  "products/searchProducts",
-  async (value) => {
-    try {
-      const response = await axiosInstance.get(`products?q=${value}`);
-      return response.data;
-    } catch (error) {
-      return error.message;
-    }
-  }
-);
-
-
-
 export const filterById = createAsyncThunk(
   "products/filterById",
   async (productId) => {
@@ -115,22 +77,10 @@ const ProductsSlice = createSlice({
       }
       localStorage.setItem("updated post", JSON.stringify(newPost));
     },
-
   },
   //ASYNC CALLS REDUCERS
   extraReducers(builder) {
     builder
-      //GET REDUCER
-
-      .addCase(searchProducts.pending, (state, action) => {
-        state.status = "loading";
-      })
-      .addCase(searchProducts.fulfilled, (state, action) => {
-        state.status = "success";
-        state.products = state.products.concat(action.payload);
-      })
-
-      //POST REDUCER
 
       .addCase(addProducts.pending, (state, action) => {
         state.status = "loading";
@@ -146,26 +96,7 @@ const ProductsSlice = createSlice({
       })
 
       //FILTER REDUCERS
-      //FILTER BY SOFTWARE REDUCER
-      .addCase(softwareFilter.fulfilled, (state, action) => {
-        state.status = "success";
-        state.products = state.products.concat(action.payload);
-      })
 
-      //FILTER BY YEAR REDUCER
-   
-      //FILTER BY BRAND REDUCER
-      .addCase(filterByBrand.pending, (state, action) => {
-        state.status = "loading";
-      })
-      .addCase(filterByBrand.fulfilled, (state, action) => {
-        state.status = "success";
-        state.products = state.products.concat(action.payload);
-      })
-      .addCase(filterByBrand.rejected, (state, action) => {
-        state.status = "failed";
-        state.error = action.error.message;
-      })
       //FILTER BY ID REDUCER
       .addCase(filterById.fulfilled, (state, action) => {
         state.status = "success";

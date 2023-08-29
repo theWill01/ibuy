@@ -16,18 +16,21 @@ import Paginate from "./routes/Paginate";
 import { store } from "./app/store";
 import { Provider } from "react-redux";
 import Home from "./routes/home/Home";
-import Search from "./routes/Search";
+import Search, { searchProducts } from "./routes/Search";
 import UpdatePost from "./features/posts/UpdatePost";
 import { getAllPosts } from "./pages/posts/PostsList";
 import PriceLayout from "./layouts/PriceLayout";
+import BrandLayout from "./layouts/BrandLayout";
 import PostsLayout from "./pages/posts/PostsLayout";
-import BrandLayout from "./pages/BrandLayout";
 import { checkForBrand } from "./components/brand/BrandList";
 import { getPostByYear } from "./routes/Year";
 import { priceRange } from "./components/brand/Price";
 import { checkSoftware } from "./components/software/Software";
-const LazyPostsList = React.lazy(() => import("./pages/posts/PostsList"));
+import { checkForPost } from "./pages/posts/SinglePost";
 
+
+
+const LazyPostsList = React.lazy(() => import("./pages/posts/PostsList"));
 const LazyBrandList = React.lazy(() => import("./components/brand/BrandList"));
 const LazyPrice = React.lazy(() => import("./components/brand/Price"));
 const LazySoftware = React.lazy(() => import("./components/software/Software"));
@@ -49,7 +52,19 @@ const router = createHashRouter(
     <Route path="/" element={<App />} errorElement={<ErrorPage />}>
       <Route index element={<Home />} />
       <Route path="update/:postId/:postTitle" element={<UpdatePost />} />
-      <Route path="search/:search" element={<Search />} />
+      <Route path="search/:search" element={<PostsLayout />}>
+        <Route
+          index
+          element={
+            <Suspense>
+              <Search />
+            </Suspense>
+          }
+          loader={({ params }) => {
+            return searchProducts(params.search);
+          }}
+        />
+      </Route>
       <Route path="software/:software" element={<PostsLayout />}>
         <Route
           index
@@ -109,7 +124,7 @@ const router = createHashRouter(
           <Route
             index
             element={
-              <Suspense>
+              <Suspense fallback={fb}>
                 <LazyBrandList />
               </Suspense>
             }
@@ -123,7 +138,7 @@ const router = createHashRouter(
         <Route
           index
           element={<SinglePost />}
-          loader={({ params }) => checkForBrand(params.id)}
+          loader={({ params }) => checkForPost(params.id)}
         />
       </Route>
       <Route path="*" element={<ErrorPage />} />

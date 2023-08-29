@@ -35,8 +35,8 @@ const PaginationItems = ({ item }) => {
         </li>
         {/*THE PRODUCT RATINGS */}
         <li className="product-detail flex text-[0.8rem] lg:text-[0.5rem] xl:text-[0.7rem] relative bg-[#e4f2ee]">
-          ({item.rating})-
-          <Rating rate={item.rating} />
+          ({item.stars})-
+          <Rating rate={item.stars} />
         </li>
         {/*THE PRODUCT PRICE */}
         <li className="price flex align-middle justify-start w-100 border border-gray text-[1.3rem] lg:text-[1rem] sm:text-[1.3rem] xl:text-[1.2rem] text-[#0572af]  text-center ">

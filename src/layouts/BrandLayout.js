@@ -3,9 +3,7 @@ import { Outlet } from 'react-router-dom'
 
 const BrandLayout = () => {
   return (
-      <div>BrandLayout
-          <Outlet />
-    </div>
+    <div className='w-[70%]'>BrandLayout <Outlet /></div>
   )
 }
 

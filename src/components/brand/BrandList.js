@@ -1,23 +1,15 @@
 import React, { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
-import { useDispatch, useSelector } from "react-redux";
 import { useLoaderData, useParams } from "react-router-dom";
 import "../../styles/Pagination.scss";
-import {
-  allProducts,
-  filterByBrand,
-  productsError,
-  productsStatus,
-} from "../../features/posts/PostsSlice";
+
 import PaginationItems from "../pagination/PaginationItems";
-import SideBar from "../sidebar/Sidebar";
+
 import axiosInstance from "../../services/Axios";
 
 function BrandList() {
   const products = useLoaderData();
   const params = useParams();
-  const error = useSelector(productsError);
-  const status = useSelector(productsStatus);
   const filterKey = params.brand;
   const itemsPerPage = 8;
   const [currentItems, setCurrentItems] = useState([]);
@@ -42,7 +34,7 @@ function BrandList() {
     ));
 
   return (
-    <section className="category-container w-100 h-[100%] flex">
+    <section className="category-container w-100 h-[100%] flex border border-green-500">
       <article className="w-full h-full sm:w-[80%] flex flex-col justify-between border border-black">
         {" "}
         <div className="w-[100%] h-[95%] border border-black">
