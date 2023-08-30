@@ -1,8 +1,8 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
- baseURL: "ibuy-data.onrender.com",
- // baseURL: "http://localhost:3001/",
+  baseURL: "ibuy-data.onrender.com",
+ //  baseURL: "http://localhost:3001/",
   withCredentials: false,
   headers: {
     "Content-Type": "application/json",
