@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, Link } from "react-router-dom";
 import {
   allImages,
   productsStatus,
@@ -8,7 +8,7 @@ import {
 } from "../../features/posts/PostsSlice";
 import { addToCart } from "../../features/cart/CartSlice";
 import Rating from "../../components/rating/Rating";
-import "../../assets/singleProductsPage.scss";
+import "../../styles/SinglePost.scss";
 import { MemoisedSimilarProducts } from "../../features/similarItem/SimilarProducts";
 import { MemoisedSameBrand } from "../../features/similarBrand/SameBrand";
 import axiosInstance from "../../services/Axios";
@@ -17,10 +17,8 @@ export default function SinglePost() {
   const loaderData = useLoaderData();
   const dispatch = useDispatch();
   const product = loaderData[0];
-
   const thumbNails = JSON.parse(loaderData[0].images);
   const [dp, setDp] = useState(thumbNails[0].image);
-
   const status = useSelector(productsStatus);
 
   const itemImages = thumbNails.map((item, idx) => {
@@ -35,7 +33,7 @@ export default function SinglePost() {
         <img
           src={item.image}
           alt={"#"}
-          className={"w-[150px] h-[150px] object-contain"}
+          className={"w-[100px] h-[100px] object-contain my-2 mx-auto"}
         />
       </figure>
     );
@@ -43,7 +41,6 @@ export default function SinglePost() {
 
   //____________________________USE EFFECT_______________________________
   useEffect(() => {
-  
     localStorage.setItem("updated post", JSON.stringify(product));
   }, [status, product, dispatch]);
 
@@ -83,20 +80,22 @@ export default function SinglePost() {
               </h1>
             </li>
             <li>
-              <a href={`/update/${product.id}/${product.title}`}>Edit posts</a>
+              <Link to={`/update/${product.id}/${product.title}`}>
+                Edit posts
+              </Link>
             </li>
           </ul>
         </span>
         {/*single item container */}
-        <div className="w-[100%] h-[500px] sm:h-[400px] md:h-[380px] lg:h-[440px] xl:h-[400px] flex flex-col sm:flex-row border border-black">
-          <figure className="relative top-0 w-[90%] sm:w-[44%] h-[99%] xl:h-[99%] border border-red-500 overflow-hidden">
+        <div className="w-[100%] h-[600px] sm:h-[400px] md:h-[380px] lg:h-[440px] xl:h-[400px] flex flex-col sm:flex-row border border-black">
+          <figure className="relative top-0 w-[90%] sm:w-[44%] h-[50%] border border-red-500 overflow-hidden">
             <img
               className="preview-img h-full w-full md:h-full sm:w-full sm:h-[400px] lg:h-[400px] xl:h-[390px] relative my-0 mx-auto object-contain"
               src={dp}
               alt={product.title}
             />
           </figure>
-          <div className={"w-[100%]"}>
+          <div className={"h-[60%] w-[100%]"}>
             <div className={"item-images"}>{itemImages}</div>
             <ul className={"item-details"}>
               <li className="flex product-details md:text-[red]">

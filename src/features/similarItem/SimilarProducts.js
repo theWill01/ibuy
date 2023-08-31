@@ -3,10 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import Rating from "../../components/rating/Rating";
 import axiosInstance from "../../services/Axios";
 import {
-  allPosts,
-  filterByRam,
-  productsStatus,
-  similarItems,
   singleItem,
 } from "../posts/PostsSlice";
 import ReactPaginate from "react-paginate";
@@ -94,3 +90,8 @@ const SimilarProducts = (props) => {
 };
 
 export const MemoisedSimilarProducts = React.memo(SimilarProducts);
+
+export const similarPosts = async(val) => {
+  const response = await axiosInstance.get(`products?ram=${val}`)
+  return response.data
+}

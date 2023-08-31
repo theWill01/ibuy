@@ -6,11 +6,20 @@
   font-size: 0.8rem;
 }
 
+ .item-images {
+    border: 1px solid black;
+    width: 99%;
+    height: 40%;
+    overflow: hidden;
+    display: flex;
+  }
+
 @media only screen and (min-width: 640px) {
   .product-details {
     font-size: 0.8rem;
   }
 }
+
 @media only screen and (min-width: 810px) {
   .item-images {
     border: 1px solid black;
@@ -19,30 +28,8 @@
     overflow: hidden;
     display: flex;
   }
-  .item-details {
-    border: 1px solid red;
-    width: 99%;
-    height: 60%;
-  }
-  .product-details {
-    font-size: 0.9rem;
-  }
-}
-@media only screen and (min-width: 1024px) {
-  .product-details {
-    font-size: 0.78rem;
-    padding-left: 0.2rem;
-  }
-}
-@media only screen and (min-width: 1280px) {
-  .item-images {
-    border: 1px solid black;
-    width: 99%;
-    height: 30%;
-    overflow: hidden;
-    display: flex;
-  }
-  .item-details {
+
+  .item-details{
     border: 1px solid red;
     width: 99%;
     height: 60%;
@@ -52,4 +39,28 @@
   }
 }
 
-/*# sourceMappingURL=singleProductsPage.css.map */
+@media only screen and (min-width: 1024px) {
+  .product-details {
+    font-size: 0.78rem;
+    padding-left: 0.2rem;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .item-images {
+    border: 1px solid black;
+    width: 99%;
+    height: 30%;
+    overflow: hidden;
+    display: flex;
+  }
+
+  .item-details{
+    border: 1px solid red;
+    width: 99%;
+    height: 60%;
+  }
+  .product-details {
+    font-size: 0.9rem;
+  }
+}
