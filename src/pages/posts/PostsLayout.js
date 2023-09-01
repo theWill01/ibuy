@@ -5,11 +5,13 @@ const PostsLayout = () => {
   return (
     <div className="flex">
       {/*OUR PAGE SIDE NAVIGATION */}
-      <article className="w-[40%] md:w-[30%] lg:w-[24%] xl:w-[22%] hidden sm:block border border-blue-500">
+      <article className="w-[40%] md:w-[25%] lg:w-[24%] xl:w-[22%] hidden sm:block border border-blue-500">
         <SideBar />
       </article>
-     
-      <Outlet />
+
+   
+        <Outlet />
+    
     </div>
   );
 };

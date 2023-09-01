@@ -59,7 +59,7 @@ export default function SinglePost() {
   const rating = <Rating rate={product.stars} />;
 
   return (
-    <section className="flex h-[2660px] w-full sm:h-[2790px] md:h-[1450px] lg:h-full xl:h-[1500px] overflow-hidden align-[center] justify-center relative">
+    <section className="flex h-[2660px] w-full sm:h-[2790px] md:h-[1350px] lg:h-full xl:h-[1500px] overflow-hidden align-[center] justify-center relative">
       <article className="w-full h-full block">
         <span>
           <ul>
@@ -88,14 +88,16 @@ export default function SinglePost() {
         </span>
         {/*single item container */}
         <div className="w-[100%] h-[600px] sm:h-[400px] md:h-[380px] lg:h-[440px] xl:h-[400px] flex flex-col sm:flex-row border border-black">
-          <figure className="relative top-0 w-[90%] sm:w-[44%] h-[50%] border border-red-500 overflow-hidden">
+          <figure className="relative top-0 w-[90%] h-full sm:w-[44%] border border-red-500 overflow-hidden">
             <img
               className="preview-img h-full w-full md:h-full sm:w-full sm:h-[400px] lg:h-[400px] xl:h-[390px] relative my-0 mx-auto object-contain"
               src={dp}
               alt={product.title}
             />
           </figure>
-          <div className={"h-[60%] w-[100%]"}>
+          <div
+            className={"h-full w-[100%] border border-blue-500 overflow-hidden"}
+          >
             <div className={"item-images"}>{itemImages}</div>
             <ul className={"item-details"}>
               <li className="flex product-details md:text-[red]">
@@ -152,19 +154,27 @@ export default function SinglePost() {
             </strong>
           </h1>
           {/*SIMILAR PRODUCTS CONTAINER*/}
-          <div className="sm:h-[1100px] md:h-[440px] lg:h-[470px] xl:h-[450px] border border-black block md:flex">
+          <div className="sm:h-[1100px] md:h-[400px] lg:h-[470px] xl:h-[450px] border border-black block md:flex">
             {/*similar items */} <MemoisedSimilarProducts />
           </div>
 
           {/*SIMILAR BRAND CONTAINER */}
-          <div className="sm:h-[1110px] md:h-[440px] lg:h-[490px] xl:h-[450px] border border-black ">
-            <h1 className="text-[0.7rem] px-[0.2rem] lg:text-[0.9rem] xl:text-[1.2rem]">
-              <strong>
-                {" "}
-                Or you like {product.brand} devices and would like to see what
-                else they have to offer
-              </strong>
-            </h1>
+          <div className="sm:h-[1110px] md:h-[400px] lg:h-[490px] xl:h-[450px] border border-black ">
+            <span className="flex w-full  justify-between">
+              <h1 className="text-[0.7rem] px-[0.2rem] lg:text-[0.9rem] xl:text-[1.2rem]">
+                <strong>
+                  {" "}
+                  Or you like {product.brand} devices and would like to see what
+                  else they have in store ?
+                </strong>
+              </h1>
+
+              <Link to={`/products/${product.brand}`}>
+                <h1 className="text-[0.7rem] px-[0.2rem] lg:text-[0.9rem] xl:text-[1.2rem]">
+                  <strong> see all >></strong>
+                </h1>
+              </Link>
+            </span>
             <MemoisedSameBrand />
           </div>
         </div>

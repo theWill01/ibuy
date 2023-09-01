@@ -14,7 +14,7 @@
 .pagination {
   display: flex;
    border: 1px solid black;
-  width: 99%;
+  width: 30%;
   height: 30px;
   overflow: hidden;
   margin: 0 auto;
@@ -49,6 +49,54 @@
 
 .next {
   @include next-prev-btn(40px);
+}
+
+@media only screen and (min-width: 768px) {
+  .pagination {
+    display: flex;
+     border: 1px solid greenyellow;
+    width: 210px;
+    height: 99%;
+    overflow: hidden;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+    color: rgba(219, 234, 254, 1);
+    .page-num-box {
+      width: 20px;
+      height: 70%;
+      background-color: rgba(225, 239, 235, 1);
+      border: 1px solid rgba(104, 164, 228, 1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 8px;
+      border-radius: 3px;
+      font-size: 0.35rem;
+    }
+    .page-num {
+      color: #709ad2;
+      font-size: 0.45rem;
+    }
+
+    .active {
+      background-color: #709ad2;
+      color: aliceblue;
+      font-size: 0.55rem;
+    }
+  }
+
+  .prev {
+    @include next-prev-btn(30px);
+    font-size: 0.55rem;
+      font-weight: 700;
+  }
+
+  .next {
+    @include next-prev-btn(30px);
+      font-size: 0.55rem;
+     font-weight: 700;
+  }
 }
 
 @media only screen and (min-width: 1024px) {

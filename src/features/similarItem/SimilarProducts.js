@@ -61,13 +61,13 @@ const SimilarProducts = (props) => {
       break;
   }
   return (
-    <div className="h-[100%] w-[100%] border border-blue-700 ">
+    <div className="h-[100%] w-[100%] border border-red-700 ">
       {/*SIMILAR ITEMS*/}
-      <article className="h-[75.3%] sm:h-[92%] lg:h-[85%] w-[100%]  overflow-hidden block md:flex flex-col md:flex-row flex-wrap border border-black relative md:justify-start lg:justify-evenly">
+      <article className="h-[75.3%] sm:h-[92%] md:h-[92%] lg:h-[85%] w-[100%]  overflow-hidden block md:flex flex-col md:flex-row flex-wrap border border-black relative md:justify-start lg:justify-evenly">
         {page}
       </article>
       <hr className="border border-[#709ad2]" />
-      <article className="h-[34px] lg:h-[27px] relative top-0  border border-red-500 ">
+      <article className="h-[34px] md:h-[30px] overflow-hidden lg:h-[27px] relative top-0  border border-red-500 ">
         <ReactPaginate
           breakLabel="..."
           nextLabel="next"

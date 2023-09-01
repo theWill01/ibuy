@@ -13,7 +13,7 @@ const PaginationItems = ({ item }) => {
 
   return (
     //THE PAGINATION ITEM CONTAINER CONTAINER
-    <div className="border relative  border-[#eae6e6]  h-[215px] w-[100%] flex flex-row md:flex-col min-[600px]:h-[240px] min-[600px]:w-[99%] md:w-[220px] md:h-[380px] lg:w-[25em] lg:h-[380px] xl:w-[230px] xl:h-[370px] overflow-hidden mt-[5px]  rounded-md text-[0.8rem] min-[600px]:text-[0.4rem] md:text-[0.48rem] lg:text-[0.55rem]">
+    <div className="border relative  border-[#eae6e6]  h-[215px] w-[100%] flex flex-row md:flex-col min-[600px]:h-[240px] min-[600px]:w-[99%] md:w-[187px] md:h-[380px] lg:w-[25em] lg:h-[380px] xl:w-[230px] xl:h-[370px] overflow-hidden mt-[5px]  rounded-md text-[0.8rem] min-[600px]:text-[0.4rem] md:text-[0.48rem] lg:text-[0.55rem]">
       {/*THE PRODUCT IMAGE CONTAINER*/}
       <article className="w-[38%] sm:w-[55%] sm:h-[99%] md:w-full md:h-[44%] border border-black">
         <Link to={`/products/${item.brand}/${item.title}/${item.id}`}>
@@ -28,7 +28,7 @@ const PaginationItems = ({ item }) => {
         </Link>
       </article>
       {/*THE PRODUCT DETAILS CONTAINER */}
-      <ul className=" border border-green-500  w-[62%]  sm:w-full sm:h-[99%] md:h-[56%]">
+      <ul className=" border border-green-500  w-[62%] h-full  sm:w-full sm:h-[99%] md:h-[50%]">
         <li className="product-detail text-[0.7rem] xl:text-[0.73rem] border border-red-500 ">
           <strong>{item.brand}</strong> {item.title}, {item.ram}GB, {item.rom}
           GB
@@ -62,20 +62,7 @@ const PaginationItems = ({ item }) => {
           </p>
         </li>
         {/*THE QUANITY OF PRODUCTS CURRENTLY IN STORE */}
-        <li className="product-detail  ">
-          {" "}
-          {item.quantity - 1 <= 0 ? (
-            <h4 className={"[color:red] text-[0.7rem] xl:text-[0.73rem]"}>
-              {" "}
-              this is the last item in store order soon
-            </h4>
-          ) : (
-            <p className="[color:green] text-[0.7rem] xl:text-[0.73rem]">
-              we have <strong>{item.quantity - 1}</strong> left in stock order
-              soon
-            </p>
-          )}
-        </li>
+      
         {/*ADD TO CART BUTTON*/}
         <li className="w-full h-[40px] border border-red-500 md:h-[30px] xl:h-[30px] relative  sm:bottom-0">
           <button

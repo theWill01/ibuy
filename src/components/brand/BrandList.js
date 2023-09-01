@@ -34,8 +34,8 @@ function BrandList() {
     ));
 
   return (
-    <section className="category-container w-100 h-[100%] flex border border-green-500">
-      <article className="w-full h-full sm:w-[80%] flex flex-col justify-between border border-black">
+    <section className="category-container w-full h-[100%] flex border border-green-500">
+      <article className="w-full h-full sm:w-[80%] md:w-full flex flex-col justify-between border border-black">
         {" "}
         <div className="w-[100%] h-[95%] border border-black">
           <h1 className="text-[0.9rem] font-bold underline">RESULTS</h1>

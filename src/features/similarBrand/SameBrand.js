@@ -52,7 +52,7 @@ const SameBrand = () => {
   return (
     <div className="h-[100%] w-[100%] border border-blue-700 relative">
       {/*SIMILAR ITEMS*/}
-      <article className="h-[75.3%] sm:h-[92%] lg:h-[85%] w-[100%]  overflow-hidden block md:flex flex-col md:flex-row flex-wrap border border-black relative md:justify-evenly">
+      <article className="h-[75.3%] sm:h-[92%] md:h-[92%]  lg:h-[85%] w-[100%]  overflow-hidden block md:flex flex-col md:flex-row flex-wrap border border-black relative md:justify-evenly">
         {page}
       </article>
     </div>
