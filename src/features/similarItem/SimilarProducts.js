@@ -2,9 +2,7 @@ import React, { useCallback, useEffect, useState, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Rating from "../../components/rating/Rating";
 import axiosInstance from "../../services/Axios";
-import {
-  singleItem,
-} from "../posts/PostsSlice";
+import { singleItem } from "../posts/PostsSlice";
 import ReactPaginate from "react-paginate";
 import PaginationItems from "../../components/pagination/PaginationItems";
 import "../../styles/Pagination.scss";
@@ -61,12 +59,12 @@ const SimilarProducts = (props) => {
       break;
   }
   return (
-    <div className="h-full w-full  border border-black">
+    <div className="h-full w-full">
       {/*SIMILAR ITEMS*/}
-      <article className="h-[75.3%] min-[600px]:h-[95%] md:h-[92%]  lg:h-[85%] w-[100%]  overflow-hidden block md:flex flex-col md:flex-row flex-wrap  relative md:justify-evenly border border-black">
+      <article className="h-[75.3%] min-[600px]:h-[95%] md:h-[92%]  lg:h-[85%] w-[100%]  overflow-hidden block md:flex flex-col md:flex-row flex-wrap  relative md:justify-evenly ">
         {page}
       </article>
-      <hr className="border border-[#709ad2]" />
+      <hr />
       <article className="h-[34px] md:h-[30px] overflow-hidden lg:h-[27px] relative top-0">
         <ReactPaginate
           breakLabel="..."
@@ -91,7 +89,7 @@ const SimilarProducts = (props) => {
 
 export const MemoisedSimilarProducts = React.memo(SimilarProducts);
 
-export const similarPosts = async(val) => {
-  const response = await axiosInstance.get(`products?ram=${val}`)
-  return response.data
-}
+export const similarPosts = async (val) => {
+  const response = await axiosInstance.get(`products?ram=${val}`);
+  return response.data;
+};

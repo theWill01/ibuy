@@ -123,7 +123,7 @@ export default function Navbar() {
         className={
           !displayCart
             ? "hidden"
-            : "w-[280px] h-[370px] border border-black absolute right-[10px] top-[80px] overflow-scroll bg-[snow] rounded flex flex-col "
+            : "w-[280px] h-[370px]  absolute right-[10px] top-[80px] overflow-scroll bg-[snow] rounded flex flex-col "
         }
       >
         <div className="w-[100%] h-[25px] flex  justify-between px-1 border border-red-700">
@@ -136,7 +136,7 @@ export default function Navbar() {
 
           {/*CLOSE CART BUTTON*/}
           <button
-            className="h-[99%] border border-black rounded align-end"
+            className="h-[99%]  rounded align-end"
             onClick={(c) => setDisplayCart(false)}
           >
             <figure>

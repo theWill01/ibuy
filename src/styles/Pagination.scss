@@ -13,7 +13,6 @@
 
 .pagination {
   display: flex;
-   border: 1px solid black;
   width: 50%;
   height: 30px;
   overflow: hidden;
@@ -34,7 +33,7 @@
   }
   .page-num {
     color: #709ad2;
-    font-size: 0.35rem;
+    font-size: 0.55rem;
   }
 
   .active {

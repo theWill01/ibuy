@@ -55,7 +55,7 @@ export default function SinglePost() {
   const rating = <Rating rate={product.stars} />;
 
   return (
-    <section className=" h-[2510px] w-full min-[600px]:h-full md:h-full lg:h-full lg:w-[90%] xl:w-[80%] my-0 mx-auto xl:h-[1500px] overflow-hidden relative ">
+    <section className=" h-[2580px] w-full min-[600px]:h-full md:h-full lg:h-full lg:w-[90%] xl:w-[80%] my-0 mx-auto xl:h-[1500px] overflow-hidden relative ">
       <span>
         <ul>
           <li>
@@ -129,7 +129,7 @@ export default function SinglePost() {
           </ul>
         </div>
       </article>
-      <span className="flex align-middle justify-center border border-red-400 h-[30px] min-[600px]:h-[35px]">
+      <span className="flex align-middle justify-center h-[30px] min-[600px]:h-[35px]">
         <button
           className="h-[98%] w-[99%] text-center bg-[#709ad2] text-[#E4F2EE] text-[0.8rem] lg:text-[0.8rem] xl:text-[0.9rem] px-[0.6rem] my-0 mx-auto"
           onClick={() => dispatch(addToCart(product))}
@@ -148,7 +148,7 @@ export default function SinglePost() {
           </h1>
         </div>
         {/*SIMILAR PRODUCTS CONTAINER*/}
-        <article className="w-full min-[600px]:h-[830px] md:h-[856px] lg:h-[470px] xl:h-[450px] min-[810px]:justify-between  block md:flex border border-yellow-400">
+        <article className="w-full min-[600px]:h-[830px] md:h-[856px] lg:h-[470px] xl:h-[450px] min-[810px]:justify-between  block md:flex">
           {/*similar items */} <MemoisedSimilarProducts />
         </article>
 

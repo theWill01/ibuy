@@ -1,6 +1,14 @@
 $primary-color: #709ad2;
 $secondary-color: #e4f2ee;
 
+@mixin nav-bar($pos) {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  transition: 0.35s ease-in-out;
+  z-index: 9999;
+}
+
 .App {
   width: 100%;
   height: 100%;
@@ -10,24 +18,12 @@ $secondary-color: #e4f2ee;
   overflow: hidden;
 }
 .scrolled {
-  border: 1px solid black;
-  //  height: 40%;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  transition: 0.35s ease-in-out;
-  z-index: 9999;
-  filter: drop-shadow(15px 10px 9px #4e4e4e);
+  @include nav-bar(fixed);
+  filter: drop-shadow(3px -1px 15px #4e4e4e);
 }
 
 .current {
-  border: 1px solid black;
-  // height: 40%;
-  width: 100%;
-  position: relative;
-  top: 0;
-  transition: 0.35s ease-in-out;
-  z-index: 9999;
+  @include nav-bar(relative);
 }
 .close {
   width: 0;
@@ -85,23 +81,21 @@ $secondary-color: #e4f2ee;
 }
 
 @media only screen and (min-width: 600px) {
-
   .pages {
     border: 1px solid red;
     width: 100%;
     height: 70%;
     overflow: hidden;
-    
   }
   .footer {
-  width: 100%;
-  height: 20%;
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid black;
-  padding: 0.5rem;
-  background-color: $primary-color;
-}
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    padding: 0.5rem;
+    background-color: $primary-color;
+  }
 }
 @media only screen and (min-width: 768px) {
   .pages {
