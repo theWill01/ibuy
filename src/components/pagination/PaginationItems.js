@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import Rating from "../rating/Rating";
-import "./Paginate.scss";
+import "./PaginateItems.scss";
 import { addToCart } from "../../features/cart/CartSlice";
 import {Link} from "react-router-dom";
 
@@ -13,12 +13,12 @@ const PaginationItems = ({ item }) => {
 
   return (
     //THE PAGINATION ITEM CONTAINER CONTAINER
-    <div className="border relative  border-[#eae6e6]  h-[215px] w-[100%] flex flex-row md:flex-col min-[600px]:h-[240px] min-[600px]:w-[99%] md:w-[187px] md:h-[380px] lg:w-[25em] lg:h-[380px] xl:w-[230px] xl:h-[370px] overflow-hidden mt-[5px]  rounded-md text-[0.8rem] min-[600px]:text-[0.4rem] md:text-[0.48rem] lg:text-[0.55rem]">
+    <div className="border relative  border-[rgba(225, 239, 235, 1)]  h-[197px] w-[100%] flex flex-row min-[600px]:h-[190px] min-[600px]:w-[99%] lg:flex-col lg:w-[25em] lg:h-[380px] xl:w-[230px] xl:h-[370px] overflow-hidden mt-[5px]  rounded-md text-[0.8rem] min-[600px]:text-[0.4rem] md:text-[0.48rem] lg:text-[0.55rem]">
       {/*THE PRODUCT IMAGE CONTAINER*/}
-      <article className="w-[38%] sm:w-[55%] sm:h-[99%] md:w-full md:h-[44%] border border-black">
+      <article className="w-[38%] sm:w-[55%] sm:h-full lg:w-full ">
         <Link to={`/products/${item.brand}/${item.title}/${item.id}`}>
           <figure
-            className="h-[99%] border border-blue-500 overflow-hidden flex align-middle justify-center bg-[#e4f2ee] object-contain"
+            className="h-full border overflow-hidden flex align-middle justify-center bg-[#e4f2ee] object-contain"
             style={{
               alignItems: "center",
             }}
@@ -28,8 +28,8 @@ const PaginationItems = ({ item }) => {
         </Link>
       </article>
       {/*THE PRODUCT DETAILS CONTAINER */}
-      <ul className=" border border-green-500  w-[62%] h-full  sm:w-full sm:h-[99%] md:h-[50%]">
-        <li className="product-detail text-[0.7rem] xl:text-[0.73rem] border border-red-500 ">
+      <ul className="  w-[62%] h-full  sm:w-full sm:h-full">
+        <li className="product-detail text-[0.7rem] xl:text-[0.73rem]  ">
           <strong>{item.brand}</strong> {item.title}, {item.ram}GB, {item.rom}
           GB
         </li>
@@ -62,9 +62,9 @@ const PaginationItems = ({ item }) => {
           </p>
         </li>
         {/*THE QUANITY OF PRODUCTS CURRENTLY IN STORE */}
-      
+
         {/*ADD TO CART BUTTON*/}
-        <li className="w-full h-[40px] border border-red-500 md:h-[30px] xl:h-[30px] relative  sm:bottom-0">
+        <li className="w-full h-[40px]  xl:h-[30px] relative  sm:bottom-0">
           <button
             className=" w-full h-[99%] bg-[#94c4ec] text-[#e4f2ee] text-[0.95rem] md:text-[0.85rem] lg:text-[0.85rem] xl:text-[0.85rem] min-[1348px]:text-[0.95rem] rounded-sm"
             onClick={() => dispatch(addToCart(item))}

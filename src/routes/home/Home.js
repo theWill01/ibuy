@@ -24,30 +24,28 @@ export default function Home() {
   const promises = promise.map((result, idx) => (
     <figure
       key={idx}
-      className="w-[99%] border border-blue-300 sm-[600px]:h-[140px] md:w-[240px] md:h-[180px] lg:w-[180px] xl:h-[230px] xl:w-[230px]"
-      style={{ borderRadius: "5px" }}
+      className="w-[99%] h-[120px] relative border border-[rgba(206, 205, 205, 1)] flex align-[center] min-[600px]:h-[140px]  md:flex-col md:w-[300px] md:h-[250px] lg:w-[180px] xl:h-[230px] xl:w-[230px] rounded-md"
     >
       <img
         src={result.image}
         alt={result.header}
         className={
-          "w-[80px] h-[70px] lg:w-[60px] lg:h-[50px] xl:w-[80px] xl:h-[70px]"
+          "w-[80px] h-[70px] min-[600px]:w-[110px] min-[600px]:h-[110px] lg:w-[90px] lg:h-[90px] xl:w-[80px] xl:h-[70px]"
         }
         style={{ margin: "10px auto" }}
       />
 
-      <figcaption className="px-[0.5rem]">
-        <h1 className="text-[0.95rem] lg:text-[0.85rem] xl:text-[1rem] text-start">
+      <figcaption className="min-[600px]:w-[290px] min-[600px]:h-[90%] min-[600px]:my-2  px-[0.5rem] lg:w-full lg:h-[60%] relative">
+        <h1 className="text-[0.98rem] min-[600px]:text-[1.2rem] lg:text-[0.85rem] xl:text-[1rem] text-start">
           {result.header}
         </h1>
-        <p className="text-[0.7rem] xl:text-[0.8rem] text-left">
+        <p className="text-[0.75rem] min-[600px]:text-[0.85rem] lg:text-[0.6rem] xl:text-[0.8rem] text-left">
           {result.body}
         </p>
-        <Link to={""}>
-          <p className="text-left relative top-1 text-[#4467c9] text-[0.55rem]xl:text-[0.7rem]">
-            {result.extra}
-          </p>
-        </Link>
+
+        <p className="text-left absolute bottom-2  text-[#4467c9] text-[0.55rem] min-[600px]:text-[0.8rem] lg:text-[0.6rem] xl:text-[0.7rem]  cursor-pointer">
+          {result.extra}
+        </p>
       </figcaption>
     </figure>
   ));
@@ -62,7 +60,7 @@ export default function Home() {
   return (
     <div className="home">
       {/*BANNER HEADER*/}
-      <section className="banner mb-5">
+      <section className="banner border mb-5">
         <Banner />
       </section>
       {/*-------------------------------------------------------------------------------*/}
@@ -83,7 +81,7 @@ export default function Home() {
       </article>
       <h1 className="article-head">Explore Official Brand Stores</h1>
 
-      <article className="h-[62.5em] md:h-[499px] xl:h-[565px] border border-black">
+      <article className="h-[62.5em] md:h-[499px] xl:h-[565px] ">
         <PopularBrands />
       </article>
       <article className="gift flex-col ">
@@ -95,19 +93,22 @@ export default function Home() {
               FIND THE <br /> PERFECT GIFT
             </h1>
             <h4 className="shop-samsung">Shop Samsung</h4>
-          </span>{" "}
-          <img className="top-img" src={samsung2} alt="$" />{" "}
+          </span>
+          <img className="top-img" src={samsung2} alt="$" />
           <img className="btm-img" src={samsung} alt="$" />
         </div>
 
         <article className="gift-right-side">{popularBrands2}</article>
       </article>
       <article className={"certified-box"}>{certified}</article>
-      <article className="border border-black">
+      <article className="border ">
         <h2 className="article-head">Shop by Condition</h2>
         {conditions}
       </article>
-      <article className="w-[100%] bg-[#CECDCD]" style={{ margin: "0px auto" }}>
+      <article
+        className="w-full h-[1140px] min-[600px]:h-[760px] md:h-[600px] xl:h-[700px] overflow-hidden bg-[#CECDCD]"
+        style={{ margin: "0px auto" }}
+      >
         {shopByBrands}
       </article>
       <article className={"banner-3"}>
@@ -116,7 +117,7 @@ export default function Home() {
           <h1>HIGH QUALITY.</h1>
           <p>We vet and qualify all our refurbished product</p>
           <p>so you are guaranteed top quality.</p>
-          <p>Learn more.....</p>
+          <p className="test">Learn more.....</p>
         </span>
         <span className={"text-2"}></span>
         <figure className={"banner-img2"}>

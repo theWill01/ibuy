@@ -10,14 +10,19 @@ $secondary-color: #e4f2ee;
   overflow: hidden;
 }
 .scrolled {
+  border: 1px solid black;
+  //  height: 40%;
   width: 100%;
   position: fixed;
   top: 0;
   transition: 0.35s ease-in-out;
   z-index: 9999;
+  filter: drop-shadow(15px 10px 9px #4e4e4e);
 }
 
 .current {
+  border: 1px solid black;
+  // height: 40%;
   width: 100%;
   position: relative;
   top: 0;
@@ -58,6 +63,8 @@ $secondary-color: #e4f2ee;
 }
 
 .footer {
+  width: 100%;
+  height: 80%;
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid black;
@@ -68,7 +75,41 @@ $secondary-color: #e4f2ee;
 .top-nav {
   filter: drop-shadow(5px 5px 5px rgba(255, 255, 255, 0.1));
 }
+
+.pages {
+  border: 1px solid green;
+  width: 100%;
+  height: 80%;
+  overflow: hidden;
+  position: relative;
+}
+
+@media only screen and (min-width: 600px) {
+
+  .pages {
+    border: 1px solid red;
+    width: 100%;
+    height: 70%;
+    overflow: hidden;
+    
+  }
+  .footer {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+  padding: 0.5rem;
+  background-color: $primary-color;
+}
+}
 @media only screen and (min-width: 768px) {
+  .pages {
+    border: 1px solid green;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
   .open {
     width: 100%;
     height: 100%;
@@ -79,6 +120,27 @@ $secondary-color: #e4f2ee;
     z-index: 11;
     opacity: 1;
     cursor: pointer;
+  }
+
+  .footer-box {
+    background-color: #4467c9;
+    color: #e4f2ee;
+    .top-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 40px;
+
+      text-align: center;
+    }
+  }
+
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    padding: 0.5rem;
+    background-color: $primary-color;
   }
 }
 @media only screen and (min-width: 1024px) {

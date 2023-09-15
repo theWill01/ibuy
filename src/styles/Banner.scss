@@ -1,4 +1,4 @@
-.bg {
+@mixin back-ground {
   width: 100%;
   height: 100%;
   background-color: white;
@@ -8,18 +8,25 @@
   justify-content: space-around;
   overflow: hidden;
   position: relative;
+}
+@mixin balls($val, $color, $pos) {
+
+  width: $val;
+  height: $val;
+  border-radius: 50%;
+  background-color: $color;
+  animation: flyby 5s ease-in-out infinite;
+  position: $pos;
+}
+.bg {
+  @include back-ground;
   .blue-ball {
-    border: 1px solid black;
-    width: 230px;
-    height: 230px;
-    border-radius: 50%;
-    background-color: #4467c9;
-    animation: flyby 5s ease-in-out infinite;
-    position: relative;
-    left: 0;
+    @include balls(230px, #4467c9, relative);
+    //left: 0;
   }
   .red-ball {
-    border: 1px solid black;
+
+  
     width: 220px;
     height: 220px;
     border-radius: 50%;
@@ -85,25 +92,15 @@
 
 @media only screen and (min-width: 600px) {
   .bg {
-    //display: none;
-    width: 100%;
-    height: 100%;
-    background-color: white;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    overflow: hidden;
-    position: relative;
+    @include back-ground;
     .blue-ball {
-      border: 1px solid black;
+    
       width: 280px;
       height: 280px;
       border-radius: 50%;
       background-color: #4467c9;
       animation: flyby 9s ease-in-out infinite;
       position: relative;
-
     }
     .red-ball {
       border: 1px solid black;
@@ -113,7 +110,6 @@
       background-color: #ff845f;
       animation: flyby2 9s ease-in-out infinite;
       position: absolute;
-
     }
   }
 
@@ -192,7 +188,7 @@
       background-color: #4467c9;
       animation: flyby 9s ease-in-out infinite;
       position: relative;
-       left: 10px;
+      left: 10px;
     }
     .red-ball {
       border: 1px solid black;
@@ -353,7 +349,6 @@
   }
 }
 
-
 @media only screen and (min-width: 1280px) {
   .bg {
     //display: none;
@@ -470,7 +465,7 @@
     }
     .red-ball {
       border: 1px solid black;
-       width: 285px;
+      width: 285px;
       height: 285px;
       border-radius: 50%;
       background-color: #ff845f;

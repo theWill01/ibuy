@@ -50,12 +50,12 @@ export default function Navbar() {
   return (
     <section className="top-nav w-full relative z-[20]">
       <article
-        className="flex w-full h-[45px] bg-[#709ad2] px-[1rem] border border-red-600"
+        className="flex w-full h-[45px] bg-[#709ad2] px-[1rem]"
         style={{ alignItems: "center" }}
       >
         <Link
           to={"/"}
-          className="w-[66px] flex border border-black"
+          className="w-[66px] flex"
           style={{ alignItems: "center" }}
         >
           <h1 className="text-[#E4F2EE]">
@@ -63,7 +63,7 @@ export default function Navbar() {
           </h1>
           <p className="text-[0.5rem]">renew</p>
         </Link>
-        <article className="border border-black w-[220px] min-[600px]:w-[450px] h-[27px]  flex overflow-hidden rounded-[5px] md:w-[450px] xl:w-[700px] md:relative md:left-[20px]">
+        <article className=" w-[220px] min-[600px]:w-[450px] h-[27px]  flex overflow-hidden rounded-[5px] md:w-[450px] xl:w-[700px] md:relative md:left-[20px]">
           <form onSubmit={startSearch} className={"flex w-[100%]"}>
             <input
               name="search"
@@ -85,7 +85,7 @@ export default function Navbar() {
           </form>
         </article>
         <ul
-          className="flex justify-evenly w-[45px] sm:w-[135px] md:w-[130px] absolute right-[4px] border border-[#E4F2EE] text-[#E4F2EE] text-[0.55rem] h-[30px]"
+          className="flex justify-evenly w-[45px] sm:w-[135px] md:w-[130px] absolute right-[4px] text-[#E4F2EE] text-[0.55rem] h-[30px]"
           style={{ alignItems: "center" }}
         >
           <li className="hidden sm:block">Accounts</li>

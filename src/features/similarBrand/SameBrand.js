@@ -10,7 +10,6 @@ import { useLoaderData } from "react-router-dom";
 
 const SameBrand = () => {
   const loaderValue = useLoaderData();
-
   const dispatch = useDispatch();
   const items = useSelector(sameItems);
   const single = useSelector(singleItem);
@@ -50,12 +49,9 @@ const SameBrand = () => {
       break;
   }
   return (
-    <div className="h-[100%] w-[100%] border border-blue-700 relative">
-      {/*SIMILAR ITEMS*/}
-      <article className="h-[75.3%] sm:h-[92%] md:h-[92%]  lg:h-[85%] w-[100%]  overflow-hidden block md:flex flex-col md:flex-row flex-wrap border border-black relative md:justify-evenly">
-        {page}
-      </article>
-    </div>
+    <article className="h-[75.3%] sm:h-[92%] md:h-[92%]  lg:h-[85%] w-[100%]  overflow-hidden block md:flex flex-col md:flex-row flex-wrap border border-black relative md:justify-evenly">
+      {page}
+    </article>
   );
 };
 

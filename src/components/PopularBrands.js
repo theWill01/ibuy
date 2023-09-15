@@ -22,7 +22,7 @@ export default function PopularBrands() {
           <div className="badge">renew</div>
           <figure className="overflow-hidden">
             <img className={item.className} src={item.image} alt={item.label} />
-            <span className="absolute w-full h-[30px] border border-black  z-10 bottom-0 text-[0.85rem] text-[#E4F2EE] font-[600]">
+            <span className="absolute w-full h-[30px]  z-10 bottom-0 text-[0.85rem] text-[#E4F2EE] font-[600]">
               <p>{item.label}</p>
             </span>
           </figure>

@@ -27,8 +27,7 @@ import { getPostByYear } from "./routes/Year";
 import { priceRange } from "./components/brand/Price";
 import { checkSoftware } from "./components/software/Software";
 import { checkForPost } from "./pages/posts/SinglePost";
-
-
+import SinglePostLayout from "./layouts/SinglePostLayout";
 
 const LazyPostsList = React.lazy(() => import("./pages/posts/PostsList"));
 const LazyBrandList = React.lazy(() => import("./components/brand/BrandList"));
@@ -134,7 +133,7 @@ const router = createHashRouter(
           />
         </Route>
       </Route>
-      <Route path="products/:brand/:title/:id">
+      <Route path="products/:brand/:title/:id" element={<SinglePostLayout />}>
         <Route
           index
           element={<SinglePost />}

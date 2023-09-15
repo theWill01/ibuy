@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <section className="footer h-[280px]">
+    <section className="footer">
       <article>
         <h1>Get to Know Us</h1>
         <p>Careers</p>

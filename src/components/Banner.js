@@ -6,7 +6,7 @@ export default function Banner() {
   const bgText = <h1>IBUY</h1>;
 
   return (
-    <section className=" border border-black">
+    <section>
       <div className="flex align-middle justify-center h-[315px] w-[100%] relative">
         <div className="bg">
           <div className="blue-ball"></div>
@@ -25,14 +25,14 @@ export default function Banner() {
         </div>
       </div>
       <div
-        className="w-[99%] h-[50%] border border-black flex flex-col  md:w-full md:h-[30%] 2xl:text-[red] justify-center md:flex-row"
+        className="w-[99%] h-[50%] flex flex-col  md:w-full md:h-[30%] 2xl:text-[red] justify-center md:flex-row"
         style={{ alignItems: "center" }}
       >
         {bannerIcons.map((items) => {
           return (
             <figure
               key={items.id}
-              className="border border-black h-[140px] w-[250px] min-[360px]:h-[120px]"
+              className=" h-[140px] w-[250px] min-[360px]:h-[120px]"
             >
               <img src={items.image} alt="" className="my-2 mx-auto h-[70%] md:h-[60px] md:mt-5 lg:h-[90px] min-[360px]:w-[80px] min-[360px]:h-[70px]" />
               <figcaption className="text-[0.9rem] w-full text-center">{items.label}</figcaption>

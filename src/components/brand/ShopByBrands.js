@@ -10,7 +10,7 @@ export default function ShopByBrands() {
   const links =
     brands &&
     brands.map((link, index) => (
-      <a href={`/products/${link.label.toLowerCase()}`} key={index}>
+      <Link to={`/products/${link.label.toLowerCase()}`} key={index}>
         <figure>
           <img className="object-contain" src={link.file} alt={link.label} />
           <figcaption className="text-center left-0 w-full">
@@ -19,28 +19,23 @@ export default function ShopByBrands() {
             </h1>
           </figcaption>
         </figure>
-      </a>
+      </Link>
     ));
   return (
-    <>
+    <section className="w-full">
       <div
-        className="flex h-[40px] px-3 w-full justify-between border border-black "
+        className="flex h-[40px] px-3 w-full justify-between border border-[rgba(234, 230, 230, 1)]  "
         style={{ alignItems: "center" }}
       >
         {" "}
         <h1 className="text-[0.95rem]">
           <strong>Shop by Brands</strong>{" "}
         </h1>{" "}
-        <Link
-          to={"/products"}
-          className="text-[0.95rem]"
-        >
+        <Link to={"/products"} className="text-[0.95rem]">
           <strong>See All Brands</strong>
         </Link>
       </div>
-      <div className={"category-links border border-black overflow-hidden mb-5"}>
-        {links}
-      </div>
-    </>
+      <div className={"category-links overflow-hidden mb-5"}>{links}</div>
+    </section>
   );
 }
